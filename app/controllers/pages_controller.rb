@@ -7,6 +7,6 @@ class PagesController < ApplicationController
   def dashboard
     @locations = Location.all
     @waste_items = current_user.waste_items
-    # @users =
+    @users = current_user.username
   end
 end
