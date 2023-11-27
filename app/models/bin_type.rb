@@ -1,0 +1,2 @@
+class BinType < ApplicationRecord
+end
