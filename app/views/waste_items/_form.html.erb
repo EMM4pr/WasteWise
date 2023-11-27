@@ -1,0 +1,5 @@
+<%= simple_form_for(waste_item) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :category, collection: [ "Yellow Bin", "Cooking Appliances", "Outdoor Cooking", "Beverage Appliances", "Specialty Appliances" ] %>
+  <%= f.submit %>
+<% end %>
