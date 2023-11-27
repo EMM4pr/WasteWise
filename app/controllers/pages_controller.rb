@@ -3,4 +3,10 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def dashboard
+    @locations = Location.all
+    @waste_items = current_user.waste_items
+    # @users =
+  end
 end

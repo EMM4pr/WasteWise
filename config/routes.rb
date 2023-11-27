@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'waste_items/new'
+  get 'waste_items/create'
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -9,5 +11,14 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  
+
+  # Dashboard
+  get "dashboard", to: "pages#dashboard"
+  # User route with
+  resources :waste_items, only: %i[index show]
+
+  resources :user, only: %i[] do
+    resources :waste_items, only: %i[new create]
+  end
+
 end
