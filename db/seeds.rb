@@ -1,8 +1,10 @@
 # db/seeds.rb
 
 # Clear existing data
-User.destroy_all
+DisposalRecord.destroy_all
+LocationBinType.destroy_all
 BinType.destroy_all
+User.destroy_all
 Category.destroy_all
 WasteItem.destroy_all
 Location.destroy_all
@@ -48,11 +50,19 @@ end
 
   category = Category.all.sample
 
-  WasteItem.create(
+  waste_item = WasteItem.create(
     user: user,
     bin_type: bin_type,
     category: category,
     name: "Item #{index + 1}"
+  )
+  location = Location.first
+  # Create disposable_records
+  DisposalRecord.create(
+    user: user,
+    location: location,
+    waste_item: waste_item,
+    disposal_date: "date"
   )
 end
 
