@@ -3,6 +3,7 @@
     <%= link_to "pages_path", class: "navbar-brand" do %>
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
+
     <% if user_signed_in? %>
     <%= current_user.username.capitalize %>
     <% end %>
