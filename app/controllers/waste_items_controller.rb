@@ -8,7 +8,9 @@ class WasteItemsController < ApplicationController
   def create
     @waste_item = Waste_items.new(wasteitem_params)
     # save user of wasteitem appliance as current user
-    @waste_item.user = current_user
+    if user_signed_in?
+      @waste_item.user = current_user
+    end
     if @waste_item.save! # ! stop execution @ prob
       redirect_to waste_item_path(@waste_item), notice: 'your waste_items appliance was successfully created.'
     else
