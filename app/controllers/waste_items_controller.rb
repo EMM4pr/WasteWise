@@ -2,11 +2,12 @@ class WasteItemsController < ApplicationController
   before_action :set_waste_items, only: %i[create show]
 
   def show
-    @locations = Location.all
+    @locations = Location.joins(:bin_types).where(bin_types: { id: @waste_item.bin_type.id })
     @markers = @locations.geocoded.map do |location|
       {
         lat: location.latitude,
-        lng: location.longitude
+        lng: location.longitude,
+        marker_html: render_to_string(partial: "marker")
       }
     end
   end
