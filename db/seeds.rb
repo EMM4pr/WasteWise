@@ -27,8 +27,12 @@ categories_data = [
   { name: 'Yellow Bag', description: 'Lightweight packaging made of plastic, metal, or composite materials, such as beverage cartons, yogurt pots, and plastic packaging', credits: 6 },
   { name: 'Gray Bin', description: 'Residual waste that cannot be recycled', credits: 3 }
 ]
-
 Category.create(categories_data)
+
+locations_data = [
+  { name: 'Le Wagon', address: 'Rudi-Dutschke-Straße', latitude: '', longitude: ''}
+]
+Location.create(locations_data)
 
 # Create 20 waste items
 20.times do |index|
@@ -44,11 +48,21 @@ Category.create(categories_data)
 
   category = Category.find_by(name: bin_type.name)
 
-  WasteItem.create(
+  waste_item = WasteItem.create(
     user: user,
     bin_type: bin_type,
     category: category,
     name: "Item #{index + 1}"
+  )
+
+  location = Location.first
+
+  # Create disposable_records
+  DisposalRecord.create(
+    user: user,
+    location: location,
+    waste_item: waste_item,
+    disposal_date: "date"
   )
 end
 
