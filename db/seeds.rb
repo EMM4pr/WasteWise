@@ -1,5 +1,3 @@
-# db/seeds.rb
-
 # Clear existing data
 DisposalRecord.destroy_all
 LocationBinType.destroy_all
@@ -35,8 +33,7 @@ categories_data.each do |category|
   Category.create(category)
 end
 
-
-# Create 20 waste items
+# Create 20 waste items & disposal records
 20.times do |index|
   user = index.even? ? user1 : user2
   bin_type = case index % 6
@@ -56,7 +53,9 @@ end
     category: category,
     name: "Item #{index + 1}"
   )
+
   location = Location.first
+
   # Create disposable_records
   DisposalRecord.create(
     user: user,
@@ -72,17 +71,13 @@ locations = [
   { name: 'BSR', address: 'Asgardstraße 3. 13089 Berlin'},
   { name: 'DM', address: 'Friedrichstraße 191. 10117 Berlin'},
   { name: 'Waste not', address: 'Katzbachstraße 5. 10965 Berlin'},
-  # Add more locations as needed
 ]
 
 locations.each do |location|
  Location.create!(location)
 end
+               
 puts 'Finished!'
-
-
-###########################################
-
 
 puts "Creating locations and bin types"
 
@@ -95,7 +90,6 @@ locations_bin_types = [
   {location: Location.all.sample, bin_type: brown_bin},
   {location: Location.all.sample, bin_type: brown_bin},
   {location: Location.all.sample, bin_type: brown_bin}
-  # Add more locations as needed
 ]
 
 locations_bin_types.each do |bin_type|

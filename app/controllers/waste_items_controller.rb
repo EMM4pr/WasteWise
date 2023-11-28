@@ -12,12 +12,22 @@ class WasteItemsController < ApplicationController
     end
   end
 
+  def index
+    @waste_items = WasteItem.all.order(:id)
+    @locations = Location.new
+    @categories = Category.new
+    @waste_items = @waste_items.where(tag: params[:query]) if params[:query].present?
+  end
+
   def new
     @waste_item = WasteItem.new
   end
 
   def create
-    @waste_item = WasteItem.new(wasteitem_params)
+
+    @waste_item = Waste_items.new(waste_item_params)
+
+
     # save user of wasteitem appliance as current user
     if user_signed_in?
       @waste_item.user = current_user
@@ -33,5 +43,9 @@ class WasteItemsController < ApplicationController
 
   def set_waste_items
     @waste_item = WasteItem.find(params[:id])
+  end
+
+  def waste_item_params
+    params.require(:waste_item).permit(:name)
   end
 end
