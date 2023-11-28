@@ -2,6 +2,13 @@ class WasteItemsController < ApplicationController
   before_action :set_waste_items, only: %i[create show]
 
   def show
+    @locations = Location.all
+    @markers = @locations.geocoded.map do |location|
+      {
+        lat: location.latitude,
+        lng: location.longitude
+      }
+    end
   end
 
   def new
