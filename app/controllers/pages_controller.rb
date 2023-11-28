@@ -20,5 +20,6 @@ class PagesController < ApplicationController
     # {"Blue Paper Bin"=>3, "Yellow Bag"=>3, "Yellow Bin"=>4}
     # @all_values = bin_type_count.values
     # "" * current_user.disposable_records.count
+    end
   end
 end
