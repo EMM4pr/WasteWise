@@ -10,8 +10,10 @@ class PagesController < ApplicationController
 
   def dashboard
     @locations = Location.all
+    if user_signed_in?
     @waste_items = current_user.waste_items
     @users = current_user.waste_items
+
     @disposal_record = current_user.disposal_records
     @bin_types_count = current_user.disposal_records.joins(waste_item: :bin_type).group("bin_types.name").count
     # Bin Type A => x mal in disposal_record of the user
