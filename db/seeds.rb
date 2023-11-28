@@ -1,5 +1,3 @@
-# db/seeds.rb
-
 # Clear existing data
 User.destroy_all
 BinType.destroy_all
@@ -34,7 +32,7 @@ locations_data = [
 ]
 Location.create(locations_data)
 
-# Create 20 waste items
+# Create 20 waste items & disposal records
 20.times do |index|
   user = index.even? ? user1 : user2
   bin_type = case index % 6
