@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     @locations = Location.all
     if user_signed_in?
     @waste_items = current_user.waste_items
-    @users = current_user.username
+    @users = current_user.waste_items
     end
   end
 end
