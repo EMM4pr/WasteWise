@@ -1,6 +1,22 @@
 .navbar-lewagon {
+  color: white;
   justify-content: space-between;
-  background: white;
+  background: #557C55;
+  border-width: 80%;
+  border-radius: 50px;
+  margin-top: 10px;
+  margin: 5px 5px auto;
+  height: 60px;
+}
+
+.nav-link{
+  color: white;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.nav-link:hover{
+  font-weight: 650;
+  color: red;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +24,6 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 30px;
+  border-radius: 50%;
 }
