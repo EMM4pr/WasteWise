@@ -24,7 +24,7 @@ class WasteItemsController < ApplicationController
   end
 
   def create
-    @waste_item = Waste_items.new(waste_item_params)
+    @waste_item = WasteItem.new(waste_item_params)
     # save user of wasteitem appliance as current user
 
     @waste_item.user = current_user if user_signed_in?
