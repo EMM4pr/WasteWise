@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   # Dashboard
   get "dashboard", to: "pages#dashboard"
+  get "about", to: "pages#about"
   # User route with
   resources :waste_items, only: %i[index show new]
 
