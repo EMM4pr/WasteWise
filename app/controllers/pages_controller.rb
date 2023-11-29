@@ -8,6 +8,9 @@ class PagesController < ApplicationController
   def home
   end
 
+  def about
+  end
+
   def dashboard
     @locations = Location.all
     # if user_signed_in?

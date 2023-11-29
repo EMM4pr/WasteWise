@@ -1,0 +1,101 @@
+.container-about {
+  background-color: $light_green;
+  padding-bottom: 10px;
+}
+
+.box-green {
+  background-color: $dark_green;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  box-shadow: 8px 8px 1px #E60F05;
+}
+
+.header-waste {
+  margin: 10px;
+}
+
+.box-white {
+  background-color: white;
+  border-radius: 10px;
+  margin: 10px;
+  border: 1px solid black;
+}
+
+.box-white:hover {
+  background-color: #cacaca;
+}
+
+.icon{
+  text-align: center;
+  margin: 10px;
+  margin-top: 20px;
+  border-radius: 50%;
+  background-color: $primary_green;
+  width: 30px;
+  height: 30px;
+}
+
+.text{
+  margin-top: 10px;
+}
+
+.image-tag {
+  position: relative;
+  width: 373px;
+}
+
+.p {
+  margin-left: 10%;
+}
+
+.box-white-1 {
+  background-color: white;
+  border-radius: 10px;
+  margin: 10px;
+  border: 1px solid black;
+}
+
+.box-white-1:hover {
+  background-color: #cacaca;
+}
+
+.btn-ghost {
+  color: rgb(240, 231, 231);
+  background-color: #fa7070;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 12;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}
+
+.btn-ghost-1 {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-ghost-1:hover {
+  opacity: 1;
+}
+
+.box-sign-in {
+  display: flex;
+  justify-content: space-evenly;
+}
