@@ -20,6 +20,8 @@ gem "importmap-rails"
 
 gem "cloudinary"
 
+gem "httparty"
+
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 

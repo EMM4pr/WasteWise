@@ -20,4 +20,6 @@ Rails.application.routes.draw do
     resources :waste_items, only: %i[new create index new]
   end
 
+
+
 end
