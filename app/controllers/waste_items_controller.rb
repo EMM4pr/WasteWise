@@ -43,6 +43,6 @@ class WasteItemsController < ApplicationController
   end
 
   def waste_item_params
-    params.require(:waste_item).permit(:name)
+    params.require(:waste_item).permit(:name, :photo)
   end
 end
