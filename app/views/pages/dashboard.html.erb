@@ -1,8 +1,13 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
 <h1 class="container">Dashboard</h1>
 <div class="dash-card">
   <%# <h1>You disposed</h1> %>
-  <%= pie_chart(@bin_types_count, title: "You disposed", colors: ["#8A584C", "#34AD0A", "#FFD50B"]) %>
-
+  <a href="#" id="pieChartLink" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <%= pie_chart(@bin_types_count, title: "You disposed", colors: ["#8A584C", "#34AD0A", "#FFD50B"]) %>
+  </a>
 </div>
 
 <h1>You saved g/kWh CO2 - Emissions</h1>
@@ -12,4 +17,26 @@
       🌲
     </div>
   <%end%>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"> title </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <% @disposal_records.each do |disposal_record|%>
+          <%= disposal_record.waste_item.name%>
+          <%= disposal_record.waste_item.category.name%>
+        <%end%>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+<%#       <%= link_to "See all", waste_items_path, class:"link" %>
+   </div>
+  </div>
 </div>
