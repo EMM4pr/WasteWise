@@ -11,8 +11,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  # Dashboard
-  get "dashboard", to: "pages#dashboard"
+
   # User route with
   resources :waste_items, only: %i[index show new]
 
