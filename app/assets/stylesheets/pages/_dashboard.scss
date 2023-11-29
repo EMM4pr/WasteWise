@@ -1,3 +1,24 @@
+h1 {
+  margin-top: 50px;
+  font-size: 15px;
+}
+
 .card{
- background-color: $primary_green;
+ padding: 10px;
+ background: transparent;
+ border-color: transparent;
+}
+
+.grid-card{
+  background-image: url('Me9y.gif');
+  border-radius: 20px;  background-size: cover;
+  height: 250px;
+  border: 1px solid $primary_green;
+  margin: 20px;
+  margin-bottom: 50px;
+  box-shadow: 0px 3px 5px lightgray;
+}
+
+.baum {
+  width: 20px;
 }

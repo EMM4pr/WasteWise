@@ -1,17 +1,20 @@
+
+
 <h1>Dashboard</h1>
 <div class="dash-card">
   <%# <h1>You disposed</h1> %>
   <a href="#" class="link" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    <%= pie_chart(@bin_types_count, title: "You disposed", colors: ["#8A584C", "#34AD0A", "#FFD50B"], donut: true) %>
+    <%= pie_chart(@bin_types_count, title: "You disposed", colors: ["#8A584C", "#4A702F", "#FFD50B"], donut: true) %>
   </a>
 </div>
 
 <h1>You saved g/kWh CO2 - Emissions</h1>
 <div data-controller="shuffle">
   <div class="grid-card" data-shuffle-target="grid">
+
     <% @disposal_records.count.times do%>
       <div class="card" data-shuffle-target="card">
-        🌲
+        <%= image_tag "baum#{rand(1..7)}.png", class: "baum", alt: "tree" %>
       </div>
     <%end%>
     <% (50-@disposal_records.count).times do%>
@@ -20,9 +23,9 @@
       </div>
     <%end%>
   </div>
-  <div data-action="click->shuffle#shuffleCards">
+  <%# <div data-action="click->shuffle#shuffleCards">
     <p>Reshuffle Threes</p>
-  </div>
+  </div> %>
 </div>
 
 
