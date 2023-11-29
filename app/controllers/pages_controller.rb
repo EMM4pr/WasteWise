@@ -10,7 +10,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @locations = Location.all
-    if user_signed_in?
+    # if user_signed_in?
     @waste_items = current_user.waste_items
     @users = current_user.waste_items
 
@@ -20,6 +20,6 @@ class PagesController < ApplicationController
     # {"Blue Paper Bin"=>3, "Yellow Bag"=>3, "Yellow Bin"=>4}
     # @all_values = bin_type_count.values
     # "" * current_user.disposable_records.count
-    end
+    # end
   end
 end

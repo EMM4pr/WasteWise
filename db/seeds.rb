@@ -8,8 +8,8 @@ WasteItem.destroy_all
 Location.destroy_all
 
 # Create users
-user1 = User.create(username: 'user1', email: 'user1@example.com', password: 'password1')
-user2 = User.create(username: 'user2', email: 'user2@example.com', password: 'password2')
+user1 = User.create(username: 'user1', email: 'user1@example.com', password: '1234567')
+user2 = User.create(username: 'user2', email: 'user2@example.com', password: '1234567')
 
 # Create bin types
 yellow_bin = BinType.create(name: 'Yellow Bin', description: 'Recyclable items')
@@ -32,6 +32,37 @@ categories_data = [
 categories_data.each do |category|
   Category.create(category)
 end
+
+puts "Creating locations"
+locations = [
+  { name: 'Entsorgo', address: 'Schillerpromenade 39. 12049 Berlin'},
+  { name: 'BSR', address: 'Asgardstraße 3. 13089 Berlin'},
+  { name: 'DM', address: 'Friedrichstraße 191. 10117 Berlin'},
+  { name: 'Waste not', address: 'Katzbachstraße 5. 10965 Berlin'},
+]
+
+locations.each do |location|
+ Location.create!(location)
+end
+
+puts "Creating locations and bin types"
+
+locations_bin_types = [
+  {location: Location.all.sample, bin_type: yellow_bin},
+  {location: Location.all.sample, bin_type: yellow_bin},
+  {location: Location.all.sample, bin_type: yellow_bin},
+  {location: Location.all.sample, bin_type: blue_paper_bin},
+  {location: Location.all.sample, bin_type: blue_paper_bin},
+  {location: Location.all.sample, bin_type: brown_bin},
+  {location: Location.all.sample, bin_type: brown_bin},
+  {location: Location.all.sample, bin_type: brown_bin}
+]
+
+locations_bin_types.each do |bin_type|
+  LocationBinType.create!(bin_type)
+end
+
+puts 'Finished with locations!'
 
 # Create 20 waste items & disposal records
 20.times do |index|
@@ -65,35 +96,4 @@ end
   )
 end
 
-puts "Creating locations"
-locations = [
-  { name: 'Entsorgo', address: 'Schillerpromenade 39. 12049 Berlin'},
-  { name: 'BSR', address: 'Asgardstraße 3. 13089 Berlin'},
-  { name: 'DM', address: 'Friedrichstraße 191. 10117 Berlin'},
-  { name: 'Waste not', address: 'Katzbachstraße 5. 10965 Berlin'},
-]
-
-locations.each do |location|
- Location.create!(location)
-end
-               
-puts 'Finished!'
-
-puts "Creating locations and bin types"
-
-locations_bin_types = [
-  {location: Location.all.sample, bin_type: yellow_bin},
-  {location: Location.all.sample, bin_type: yellow_bin},
-  {location: Location.all.sample, bin_type: yellow_bin},
-  {location: Location.all.sample, bin_type: blue_paper_bin},
-  {location: Location.all.sample, bin_type: blue_paper_bin},
-  {location: Location.all.sample, bin_type: brown_bin},
-  {location: Location.all.sample, bin_type: brown_bin},
-  {location: Location.all.sample, bin_type: brown_bin}
-]
-
-locations_bin_types.each do |bin_type|
-  LocationBinType.create!(bin_type)
-end
-
-puts 'Finished!'
+puts 'Finished with all the seeds!'
