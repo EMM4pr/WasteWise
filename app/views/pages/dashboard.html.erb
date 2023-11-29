@@ -5,7 +5,7 @@
 <h1 class="container">Dashboard</h1>
 <div class="dash-card">
   <%# <h1>You disposed</h1> %>
-  <a href="#" id="pieChartLink" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <a href="#" class="link" data-bs-toggle="modal" data-bs-target="#exampleModal">
     <%= pie_chart(@bin_types_count, title: "You disposed", colors: ["#8A584C", "#34AD0A", "#FFD50B"]) %>
   </a>
 </div>
@@ -28,15 +28,18 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <% @disposal_records.each do |disposal_record|%>
+        <% @disposal_records[0..3].each do |disposal_record|%>
+        <p>
           <%= disposal_record.waste_item.name%>
           <%= disposal_record.waste_item.category.name%>
+        </p>
         <%end%>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <%# <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> %>
+         <%= link_to "See all", waste_items_path, class:"link button" %>
       </div>
-<%#       <%= link_to "See all", waste_items_path, class:"link" %>
+
    </div>
   </div>
 </div>
