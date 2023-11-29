@@ -6,9 +6,3 @@ import "bootstrap"
 
 import "chartkick"
 import "Chart.bundle"
-
-/* import { Application } from "stimulus"
-window.Stimulus = Application.start() */
-
-/* import ShuffleController from "./controllers/shuffle_controller.js"
-Stimulus.register("shuffle", ShuffleController) */
