@@ -1,22 +1,28 @@
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
-<h1 class="container">Dashboard</h1>
+<h1>Dashboard</h1>
 <div class="dash-card">
   <%# <h1>You disposed</h1> %>
   <a href="#" class="link" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    <%= pie_chart(@bin_types_count, title: "You disposed", colors: ["#8A584C", "#34AD0A", "#FFD50B"]) %>
+    <%= pie_chart(@bin_types_count, title: "You disposed", colors: ["#8A584C", "#34AD0A", "#FFD50B"], donut: true) %>
   </a>
 </div>
 
 <h1>You saved g/kWh CO2 - Emissions</h1>
-<div class="grid-card">
-  <% 50.times do%>
-    <div class="card">
-      🌲
-    </div>
-  <%end%>
+<div data-controller="shuffle">
+  <div class="grid-card" data-shuffle-target="grid">
+    <% @disposal_records.count.times do%>
+      <div class="card" data-shuffle-target="card">
+        🌲
+      </div>
+    <%end%>
+    <% (50-@disposal_records.count).times do%>
+      <div class="card" data-shuffle-target="card">
+        <p></p>
+      </div>
+    <%end%>
+  </div>
+  <div data-action="click->shuffle#shuffleCards">
+    <p>Reshuffle Threes</p>
+  </div>
 </div>
 
 
