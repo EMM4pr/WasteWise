@@ -5,6 +5,7 @@
       That is <%= ((current_user.disposal_records.count / 30.0) * 100).to_i %>% of your weekly goal.
       <div class="progress-goal">
         <div class="progress-line" style="width: <%= (current_user.disposal_records.count / 30.0 * 100).to_i %>%;"></div>
+
       </div>
     </div>
   </div>

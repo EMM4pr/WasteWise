@@ -8,16 +8,43 @@ WasteItem.destroy_all
 Location.destroy_all
 
 # Create users
-user1 = User.create(username: 'user1', email: 'user1@example.com', password: '1234567')
-user2 = User.create(username: 'user2', email: 'user2@example.com', password: '1234567')
+alex = User.create(username: 'alex', email: 'alex@test.com', password: '123456')
+emma = User.create(username: 'emma', email: 'emma@test.com', password: '123456')
+shubam = User.create(username: 'shubam', email: 'shubam@test.com', password: '123456')
+tony = User.create(username: 'tony', email: 'tony@test.com', password: '123456')
+olli = User.create(username: 'olli', email: 'olli@test.com', password: '123456')
+adam = User.create(username: 'adam', email: 'adam@test.com', password: '123456')
 
 # Create bin types
-yellow_bin = BinType.create(name: 'Yellow Bin', description: 'Recyclable items')
-organic_bin = BinType.create(name: 'Organic Waste Bin', description: 'Fruit/vegetable leftovers, peelings, including citrus, Coffee grounds, filters, tea, teabags, eggshells, Green cuttings/trimmings, leaves, flowers')
-blue_paper_bin = BinType.create(name: 'Blue Paper Bin', description: 'Paper and cardboard packaging, newspapers, magazines, catalogs, catalogs, telephone books, brochures, writing and printing paper, cardboard, Paper bags (without plastic layer), Envelopes (without plastic layer)')
-brown_bin = BinType.create(name: 'Brown Bin', description: 'Biodegradable kitchen and garden waste, fruit and vegetable waste, coffee grounds, eggshells, small amounts of meat and fish')
-yellow_bag = BinType.create(name: 'Yellow Bag', description: 'Lightweight packaging made of plastic, metal, or composite materials, such as beverage cartons, yogurt pots, and plastic packaging')
-gray_bin = BinType.create(name: 'Gray Bin', description: 'Residual waste that cannot be recycled')
+yellow_bin = BinType.create(
+  name: 'Recycling',
+  description: 'Container for recyclable items, such as plastic, glass, and metal containers, promoting environmentally friendly waste disposal.'
+)
+
+organic_bin = BinType.create(
+  name: 'Organic Waste',
+  description: 'Bin designated for organic waste, including fruit/vegetable leftovers, peelings, coffee grounds, tea, eggshells, and green cuttings, fostering composting practices.'
+)
+
+blue_paper_bin = BinType.create(
+  name: 'Paper',
+  description: 'Container for paper and cardboard items, encompassing packaging, newspapers, magazines, catalogs, writing/printing paper, and cardboard, supporting paper recycling efforts.'
+)
+
+glass_bin = BinType.create(
+  name: 'Glass',
+  description: 'Dedicated bin for glass items, including jars, bottles, and any other glass materials, facilitating the recycling process for glass products.'
+)
+
+household_bin = BinType.create(
+  name: 'Household Waste',
+  description: 'Bin for residual waste that cannot be recycled, encompassing items like hygiene products and tissues, providing a disposal solution for non-recyclable household waste.'
+)
+
+bulky_bin = BinType.create(
+  name: 'Bulky Waste',
+  description: 'Bin designed for bulky residual waste that cannot be recycled, such as carpets, timber, and electrical devices, ensuring proper disposal of larger non-recyclable items.'
+)
 
 # Create categories
 categories_data = [
@@ -42,7 +69,7 @@ locations = [
 ]
 
 locations.each do |location|
- Location.create!(location)
+  Location.create!(location)
 end
 
 puts "Creating locations and bin types"
@@ -53,9 +80,9 @@ locations_bin_types = [
   {location: Location.all.sample, bin_type: yellow_bin},
   {location: Location.all.sample, bin_type: blue_paper_bin},
   {location: Location.all.sample, bin_type: blue_paper_bin},
-  {location: Location.all.sample, bin_type: brown_bin},
-  {location: Location.all.sample, bin_type: brown_bin},
-  {location: Location.all.sample, bin_type: brown_bin}
+  {location: Location.all.sample, bin_type: organic_bin},
+  {location: Location.all.sample, bin_type: organic_bin},
+  {location: Location.all.sample, bin_type: organic_bin}
 ]
 
 locations_bin_types.each do |bin_type|
@@ -66,15 +93,15 @@ puts 'Finished with locations!'
 
 # Create 20 waste items & disposal records
 20.times do |index|
-  user = index.even? ? user1 : user2
+  user = index.even? ? alex : emma
   bin_type = case index % 6
-             when 0 then yellow_bin
-             when 1 then organic_bin
-             when 2 then blue_paper_bin
-             when 3 then brown_bin
-             when 4 then yellow_bag
-             else gray_bin
-             end
+            when 0 then yellow_bin
+            when 1 then organic_bin
+            when 2 then blue_paper_bin
+            when 3 then organic_bin
+            when 4 then glass_bin
+            else household_bin
+            end
 
   category = Category.all.sample
 
@@ -96,4 +123,4 @@ puts 'Finished with locations!'
   )
 end
 
-puts 'Finished with all the seeds!'
+puts 'Finished with all the seeds! 🗑️ 🗑️ 🗑️'
