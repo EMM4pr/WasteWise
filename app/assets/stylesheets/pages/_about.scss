@@ -1,5 +1,5 @@
 .container-about {
-  background-color: $light_green;
+  background-color: #A6CF98;
   padding-bottom: 10px;
 }
 
@@ -7,10 +7,9 @@
   background-color: $dark_green;
   border-radius: 10px;
   padding: 10px;
-  margin: 20px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-align: center;
-  box-shadow: 8px 8px 1px #E60F05;
 }
 
 .header-waste {
@@ -21,7 +20,6 @@
   background-color: white;
   border-radius: 10px;
   margin: 10px;
-  border: 1px solid black;
 }
 
 .box-white:hover {
@@ -33,7 +31,7 @@
   margin: 10px;
   margin-top: 20px;
   border-radius: 50%;
-  background-color: $primary_green;
+  background-color: #A6CF98;
   width: 30px;
   height: 30px;
 }
@@ -49,13 +47,6 @@
 
 .p {
   margin-left: 10%;
-}
-
-.box-white-1 {
-  background-color: white;
-  border-radius: 10px;
-  margin: 10px;
-  border: 1px solid black;
 }
 
 .box-white-1:hover {
