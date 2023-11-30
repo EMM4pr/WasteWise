@@ -1,10 +1,14 @@
 .navbar-lewagon {
-  color: black;
+  color: $secondary_green;
   justify-content: space-between;
   background: white;
   border-width: 80%;
-  border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 0px 0px;
   height: 60px;
+  top: 0;
+/*   position: fixed;*/
+width: 100%;
+  margin-bottom: 10px;
 }
 
 .nav-link{
@@ -27,6 +31,7 @@
 }
 
 .navbar-brand{
-  color: black;
+  color: $secondary_green;
   font-size: 16px;
+  width: 30px;
 }

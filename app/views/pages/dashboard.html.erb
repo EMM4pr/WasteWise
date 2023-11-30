@@ -17,8 +17,8 @@
         <%= pie_chart(@bin_types_count, colors: ["#8A584C", "#4A702F", "#FFD50B"], donut: true, class:"chart") %>
       </a>
     </div>
-
-    <div  data-controller="shuffle">
+  </div>
+    <div class="inner-card-white" data-controller="shuffle">
       <h1>Grow Your Forest </h1>
       <div class="grid-card" data-shuffle-target="grid">
         <% @disposal_records.count.times do%>
@@ -39,14 +39,18 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel"> title </h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Your recently disposed items </h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <% @disposal_records[0..3].each do |disposal_record|%>
             <p>
+              <div>
               <%= disposal_record.waste_item.name%>
+              </div>
+              <div>
               <%= disposal_record.waste_item.category.name%>
+              </div>
             </p>
             <%end%>
           </div>
