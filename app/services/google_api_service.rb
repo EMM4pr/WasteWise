@@ -29,6 +29,8 @@ class GoogleApiService
     }
   end
 
+  # COmment for food luck
+
   def self.find_info(parsed_response)
     return { error: "No response data" } if parsed_response["responses"].nil?
 
