@@ -7,7 +7,8 @@ class WasteItemsController < ApplicationController
       {
         lat: location.latitude,
         lng: location.longitude,
-        marker_html: render_to_string(partial: "marker")
+        marker_html: render_to_string(partial: "marker"),
+        info_window_html: render_to_string(partial: "info_window", locals: {location: location})
       }
     end
   end
