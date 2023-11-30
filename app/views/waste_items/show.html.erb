@@ -1,7 +1,7 @@
 <%#= link_to "<<", root_path, class:"link" %>
 
 <div class="item-container">
-<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.tVU_ep1ZXR1ONaJNoSUC5gHaHa%26pid%3DApi&f=1&ipt=df7740ce50da673cf775b68fd2766bd4da8b930257319644bf4a3286ba0dab38&ipo=images" class="card-img-top img-fluid" alt="lightbulb">
+<%= cl_image_tag @waste_item.photo.key, class: "card-img-top img-fluid" %>
 
   <div class="waste-container">
     <h2><%= @waste_item.name %></h2>

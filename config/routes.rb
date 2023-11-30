@@ -22,4 +22,9 @@ Rails.application.routes.draw do
   resources :user, only: %i[] do
     resources :waste_items, only: %i[new create index new]
   end
+
+  require "sidekiq/web"
+  authenticate :user, ->(user) { user.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 end

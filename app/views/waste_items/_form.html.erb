@@ -1,8 +1,6 @@
 <div data-controller="camera">
   <%= simple_form_for [current_user, @waste_item], data: {camera_target: "simpleform"}, html: {multipart: true} do |f| %>
   <%= f.input :name %>
-  <%= f.input :photo, as: :file, label: false, input_html:{ data: {camera_target: "imageholder" }} %>
-  <%= f.submit %>
   <% end %>
 
 <input

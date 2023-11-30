@@ -28,26 +28,20 @@ class WasteItemsController < ApplicationController
   def create
     @waste_item = WasteItem.new(waste_item_params)
     # save user of wasteitem appliance as current user
-
     @waste_item.user = current_user
     @waste_item.bin_type = BinType.all.sample
     @waste_item.category = Category.all.sample
-    if @waste_item.save! # ! stop execution @ prob
-      redirect_to waste_item_path(@waste_item), notice: 'your waste_items appliance was successfully created.'
+    if @waste_item.save!
+      # find_waste_item_name(@waste_item.photo.url)
+      respond_to do |format|
+        format.html { redirect_to waste_item_path(@waste_item), notice: 'your waste_items appliance was successfully created.' }
+        format.text { render plain: "#{request.protocol}#{request.host_with_port}/waste_items/#{@waste_item.id}" }
+      end
+      # raise
     else
       render :new, status: :unprocessable_entity
     end
   end
-
-  def analyze
-    # @result = KindsOfBinService.determine_bin(params[:image_url])
-    @result = GoogleApiService.analyze_image(params[:photo_url])
-    redirect_to new_waste_item_path(result: @result)
-  end
-
-  # def vision_analyze
-  #   @trash = params[:result]
-  # end
 
   private
 
