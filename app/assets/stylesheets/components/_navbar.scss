@@ -1,11 +1,9 @@
 .navbar-lewagon {
-  color: white;
+  color: black;
   justify-content: space-between;
-  background: #557C55;
+  background: white;
   border-width: 80%;
-  border-radius: 50px;
-  margin-top: 10px;
-  margin: 5px 5px auto;
+  border-radius: 10px 10px 0 0;
   height: 60px;
 }
 
@@ -26,4 +24,9 @@
 .navbar-lewagon .navbar-brand img {
   width: 30px;
   border-radius: 50%;
+}
+
+.navbar-brand{
+  color: black;
+  font-size: 16px;
 }

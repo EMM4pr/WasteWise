@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  # Google Vision Route
+  # post '/waste_items/analyze', to: 'waste_items#analyze'
+  post 'vision/analyze', to: 'visions#analyze'
+  get 'vision_analyze', to: 'visions#vision_analyze', as: "visonresult"
 
   # Dashboard
   get "about", to: "pages#about"
@@ -20,5 +22,4 @@ Rails.application.routes.draw do
   resources :user, only: %i[] do
     resources :waste_items, only: %i[new create index new]
   end
-
 end

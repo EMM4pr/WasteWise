@@ -1,0 +1,24 @@
+.footer{
+  bottom: 0px;
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  align-items: baseline;
+  height: 60px;
+  width: auto;
+  border-radius: 0px 0px 10px 10px;
+  width: 100%;
+  margin-top: 10px;
+
+  img {
+    height: 30px;
+  }
+}
+
+.camera {
+  background-color: white;
+  border-radius: 50%;
+  border: 3px solid white;
+  padding: 10px;
+  box-shadow: 0 3px 3px lightgray;
+}
