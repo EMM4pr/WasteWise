@@ -1,5 +1,19 @@
-<%= simple_form_for(waste_item) do |f| %>
+<div data-controller="camera">
+  <%= simple_form_for [current_user, @waste_item], data: {camera_target: "simpleform"}, html: {multipart: true} do |f| %>
   <%= f.input :name %>
-  <%= f.input :category, collection: [ "Yellow Bin", "Cooking Appliances", "Outdoor Cooking", "Beverage Appliances", "Specialty Appliances" ] %>
+  <%= f.input :photo, as: :file, label: false, input_html:{ data: {camera_target: "imageholder" }} %>
   <%= f.submit %>
-<% end %>
+  <% end %>
+
+<input
+        id="cameraFileInput"
+        type="file"
+        accept="image/*"
+        capture="environment"
+        data-action="change->camera#upload"
+      />
+    </label>
+
+    <img data-camera-target="picture" id="pictureFromCamera" />
+
+</div>
