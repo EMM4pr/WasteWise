@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Google Vision Route
-  post '/waste_items/analyze', to: 'waste_items#analyze'
+  # post '/waste_items/analyze', to: 'waste_items#analyze'
+  post 'vision/analyze', to: 'visions#analyze'
+  get 'vision_analyze', to: 'visions#vision_analyze', as: "visonresult"
 
   # Dashboard
   get "about", to: "pages#about"
