@@ -1,0 +1,15 @@
+<div class="container m-4">
+  <h2>What trash you got for me?</h2>
+
+  <%= form_with url: vision_analyze_path, action: "/vision_analyze", method: :post, local: true do |form| %>
+    <%= form.text_field :image_url, placeholder: 'Enter Image URL' %>
+    <%= form.submit 'Analyze Image' %>
+  <% end %>
+
+  <h3>You got a:</h3>
+  <% if @trash.present? %>
+    <p><%= @trash %>🗑️</p>
+  <% else %>
+    <p>No trash yet</p>
+  <% end %>
+</div>

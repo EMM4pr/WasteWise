@@ -1,5 +1,5 @@
 class WasteItemsController < ApplicationController
-  before_action :set_waste_items, only: %i[create show]
+  before_action :set_waste_items, only: %i[show]
 
   def show
     @locations = Location.joins(:bin_types).where(bin_types: { id: @waste_item.bin_type.id })
@@ -22,20 +22,32 @@ class WasteItemsController < ApplicationController
 
   def new
     @waste_item = WasteItem.new
+    @trash = params[:result]
   end
 
   def create
-    @waste_item = Waste_items.new(waste_item_params)
+    @waste_item = WasteItem.new(waste_item_params)
     # save user of wasteitem appliance as current user
 
-    @waste_item.user = current_user if user_signed_in?
-
+    @waste_item.user = current_user
+    @waste_item.bin_type = BinType.all.sample
+    @waste_item.category = Category.all.sample
     if @waste_item.save! # ! stop execution @ prob
       redirect_to waste_item_path(@waste_item), notice: 'your waste_items appliance was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
   end
+
+  def analyze
+    # @result = KindsOfBinService.determine_bin(params[:image_url])
+    @result = GoogleApiService.analyze_image(params[:photo_url])
+    redirect_to new_waste_item_path(result: @result)
+  end
+
+  # def vision_analyze
+  #   @trash = params[:result]
+  # end
 
   private
 
@@ -44,6 +56,6 @@ class WasteItemsController < ApplicationController
   end
 
   def waste_item_params
-    params.require(:waste_item).permit(:name)
+    params.require(:waste_item).permit(:name, :photo, :photo_url)
   end
 end
