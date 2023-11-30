@@ -44,7 +44,7 @@
   </div>
 </div>
 
-<p style="padding: 5px;">Find a <%= @waste_item.bin_type.name %> on the map below</p>
+<p style="padding: 5px;">Find a <%= @waste_item.bin_type.name %> bin on the map below</p>
 </div>
 
 <div class="map-container">
@@ -52,5 +52,5 @@
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  <p>Navigate to the nearest <%= @waste_item.bin_type.name %> by clicking the address!</p>
+  <p style="padding: 5px;">Navigate to the nearest <%= @waste_item.bin_type.name %> by clicking on the address!</p>
 </div>

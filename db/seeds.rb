@@ -18,7 +18,7 @@ adam = User.create(username: 'adam', email: 'adam@test.com', password: '123456')
 # Create bin types
 yellow_bin = BinType.create(
   name: 'Recycling',
-  description: 'Container for recyclable items, such as plastic, glass, and metal containers, promoting environmentally friendly waste disposal.'
+  description: 'Container for recyclable items, such as plastic, pots, tools, cutlery, foam materials, and metal containers, promoting environmentally friendly waste disposal.'
 )
 
 organic_bin = BinType.create(
