@@ -7,6 +7,7 @@ class GoogleApiService
                             headers: {'Content-Type' => 'application/json'})
 
     parsed_response = response.parsed_response
+    p parsed_response
     trash_json = find_info(parsed_response)
     p trash_json[0]["name"]
   end

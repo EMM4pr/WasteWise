@@ -9,9 +9,11 @@ export default class extends Controller {
   }
 
   upload(e){
+
     console.log("I am working")
     this.pictureTarget.setAttribute("src", window.URL.createObjectURL(e.currentTarget.files[0]));
     const actualImage = e.currentTarget.files[0]
+    console.log(actualImage)
 
     const formData = new FormData(this.simpleformTarget)
     // const imageBlob = new Blob([actualImage], { type: "application/octet-stream" });
@@ -19,6 +21,9 @@ export default class extends Controller {
     // formData["bird_caught[image]"] = imageBlob
     // console.log("after berlin", formData)
 
-    formData.append("adams test", actualImage, "haha.png");
+    formData.append("adams test", actualImage, "file name");
+    const object = Object.fromEntries(formData);
+    object["waste_item[photo]"] = actualImage;
+    console.log(object);
   }
 }

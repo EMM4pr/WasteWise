@@ -1,9 +1,9 @@
 <div data-controller="camera">
-<%= simple_form_for (@waste_item), data: {camera_target: "simpleform"}, html: {multipart: true} do |f| %>
+  <%= simple_form_for [current_user, @waste_item], data: {camera_target: "simpleform"}, html: {multipart: true} do |f| %>
   <%= f.input :name %>
-  <%= f.input :photo, as: :file, label: false, input_html:{ class: "d-none", data: {camera_target: "imageholder" }} %>
+  <%= f.input :photo, as: :file, label: false, input_html:{ data: {camera_target: "imageholder" }} %>
   <%= f.submit %>
-<% end %>
+  <% end %>
 
 <input
         id="cameraFileInput"
@@ -15,9 +15,5 @@
     </label>
 
     <img data-camera-target="picture" id="pictureFromCamera" />
-</div>
 
-  <%= form_with url: vision_analyze_path, action: "/vision_analyze", method: :post, local: true do |form| %>
-    <%= form.text_field :photo_url, placeholder: 'Enter Image URL' %>
-    <%= form.submit 'Analyze Image' %>
-  <% end %>
+</div>
