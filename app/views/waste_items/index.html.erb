@@ -1,6 +1,25 @@
-<% @waste_items.each do |waste_item|%>
-  <div>
-  <%= waste_item.name %>
-  </div>
-  <%# <%= waste_item.category_id.name %>
+<div class="card-white">
+  <% @waste_items.each do |waste_item|%>
+    <div id="item-cards" class="inner-card-white d-flex">
+
+      <div class="photo">
+      </div>
+
+      <div class="item-info">
+        <div>
+        <%= waste_item.name %>
+        </div>
+        <div>
+        <%= waste_item.bin_type.name %>
+        </div>
+      </div>
+      <div id="learn-more">
+        Learn More
+      
+
+      </div>
+
+    </div>
   <%end%>
+    </div>
+</div>

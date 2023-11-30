@@ -1,14 +1,13 @@
 <div class="footer">
-  <div>
-    <%= image_tag "home", class: "", alt: "home button" %>
-  </div>
+  <%= link_to root_path, class: "" do %>
+    <%= image_tag "home-pic", class: "", alt: "home button" %>
+<% end %>
   <div class="camera">
-      <%= image_tag "camera", class: "", alt: "camera" %>
+      <%= image_tag "camera-pic", class: "", alt: "camera" %>
   </div>
   <div>
-    <a href=root_path class="">
-
-      <%= image_tag "search", class: "", alt: "search button" %>
-    </a>
+    <%= link_to root_path, class: "" do %>
+      <%= image_tag "search-pic", class: "", alt: "search button" %>
+    <% end %>
   </div>
 </div>

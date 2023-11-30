@@ -14,19 +14,19 @@ h1 {
 }
 
 .progress-box {
-  box-shadow: 0px 2px 10px #ececec;
-  margin-bottom: 10px;
-  background-color: hsl(0, 0%, 94%);
-  border-radius: 10px;
+/*   box-shadow: 0px 2px 10px #ececec;
+ */  margin-bottom: 10px;
+/*   background-color: hsl(0, 0%, 94%);
+ */  border-radius: 10px;
   padding: 10px;
-  position: relative;
+  background-color: white;
 }
 
 .progress-goal{
   border: 1px solid #4A702F;
   border-radius: 20px;
-  box-shadow: 0 3px 3px lightgray;
-  height: 10px;
+/*   box-shadow: 0 3px 3px $primary_green;
+ */  height: 10px;
   margin: 10px 0px 10px 0px;
 
   .progress-line {
@@ -47,15 +47,17 @@ h1 {
 }
 
 .card-white {
-  margin-top: 10px;
-  background-color: white !important;
+  color: $secondary_green;
+  background-color: $secondary_green;
   margin-bottom: 10px;
-  padding: 27px;
+  padding: 7px;
 }
 
 .inner-card-white {
-  box-shadow: 0px 2px 10px #ececec;
-  border-radius: 10px;
+  background-color: white;
+  margin-bottom: 10px;
+/*   box-shadow: 0px 2px 10px $primary_green;
+ */  border-radius: 10px;
   padding:10px;
 }
 
