@@ -1,24 +1,78 @@
+.container_main{
+  margin: 5px;
+}
+
 h1 {
-  margin-top: 50px;
   font-size: 15px;
 }
 
-.card{
- padding: 10px;
+.progress-box {
+  margin-bottom: 10px;
+  background-color: hsl(0, 0%, 94%);
+  border-radius: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+.progress-goal{
+  border: 1px solid #4A702F;
+  border-radius: 20px;
+  box-shadow: 0 3px 3px lightgray;
+  height: 10px;
+  margin: 10px 0px 10px 0px;
+
+  .progress-line {
+    height: 9px;
+    background: linear-gradient(to right, #4A702F, #4A702F);
+    border-radius: 5px;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+
+.card {
+ padding: 5px;
  background: transparent;
  border-color: transparent;
 }
 
+.card-white {
+  margin-top: 10px;
+  background-color: white !important;
+  margin-bottom: 10px;
+  padding: 27px;
+}
+
+.inner-card-white {
+  box-shadow: 0px 2px 5px rgb(236, 236, 236);
+  border-radius: 10px;
+}
+
 .grid-card{
-  background-image: url('Me9y.gif');
-  border-radius: 20px;  background-size: cover;
+  /* background-image: url('grass.png');
+  background-size: cover;
+  background-size: auto; */
+  padding: 20px;
+  border-radius: 20px;
   height: 250px;
   border: 1px solid $primary_green;
-  margin: 20px;
-  margin-bottom: 50px;
-  box-shadow: 0px 3px 5px lightgray;
 }
 
 .baum {
-  width: 20px;
+  width: 30px;
+}
+
+.chart-box {
+  display: block;
+  box-sizing: border-box;
+  height: 350px;
+/*   background-color: white;
+ */  border-radius: 0 0 0 0px;
+  padding: 15px;
+  display: inline-block;
+
+  .chart{
+    height: auto;
+  }
 }

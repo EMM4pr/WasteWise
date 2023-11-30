@@ -13,13 +13,12 @@
 
   </head>
 
-  <body style="background-color: #F2FFE9">
-    <%= render "shared/navbar" %>
-    <%= render "shared/button_bar" %>
-    <%= render "shared/flashes" %>
-
-    <div class="container">
+  <body style="background-color: #A6CF98">
+    <div class="container_main">
+      <%= render "shared/navbar" %>
+      <%= render "shared/flashes" %>
       <%= yield %>
+      <%= render "shared/footer" %>
     </div>
   </body>
 </html>
