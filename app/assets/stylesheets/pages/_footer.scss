@@ -1,4 +1,5 @@
 .footer{
+  position:absolute;
   bottom: 0px;
   display: flex;
   justify-content: space-around;
@@ -8,7 +9,6 @@
   width: auto;
   border-radius: 0px 0px 10px 10px;
   width: 100%;
-  margin-top: 10px;
 
   img {
     height: 30px;

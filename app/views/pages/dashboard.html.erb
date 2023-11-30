@@ -12,13 +12,14 @@
 
   <div class="inner-card-white">
     <div class="dash-card">
+      <h1>You disposed</h1>
       <a href="#" class="link chart-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        <%= pie_chart(@bin_types_count, title: "You disposed", colors: ["#8A584C", "#4A702F", "#FFD50B"], donut: true, class:"chart") %>
+        <%= pie_chart(@bin_types_count, colors: ["#8A584C", "#4A702F", "#FFD50B"], donut: true, class:"chart") %>
       </a>
     </div>
 
     <div  data-controller="shuffle">
-      <h1>You saved g/kWh CO2 - Emissions</h1>
+      <h1>Grow Your Forest </h1>
       <div class="grid-card" data-shuffle-target="grid">
         <% @disposal_records.count.times do%>
           <div class="card" data-shuffle-target="card">

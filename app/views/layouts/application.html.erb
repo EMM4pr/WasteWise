@@ -16,11 +16,13 @@
 
   </head>
 
-  <body style="background-color: #A6CF98">
+  <body style="font-family: 'DM Sans', sans-serif; background-color: #A6CF98">
     <div class="container_main">
-      <%= render "shared/navbar" %>
-      <%= render "shared/flashes" %>
-      <%= yield %>
+      <div class="content-container">
+        <%= render "shared/navbar" %>
+        <%= render "shared/flashes" %>
+        <%= yield %>
+      </div>
       <%= render "shared/footer" %>
     </div>
   </body>

@@ -1,12 +1,20 @@
+.content-container{
+  position: relative;
+}
+
 .container_main{
   margin: 5px;
 }
 
 h1 {
   font-size: 15px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  margin-top: 10px;
 }
 
 .progress-box {
+  box-shadow: 0px 2px 10px #ececec;
   margin-bottom: 10px;
   background-color: hsl(0, 0%, 94%);
   border-radius: 10px;
@@ -35,6 +43,7 @@ h1 {
  padding: 5px;
  background: transparent;
  border-color: transparent;
+ font-family: 'DM Sans', sans-serif;
 }
 
 .card-white {
@@ -45,7 +54,7 @@ h1 {
 }
 
 .inner-card-white {
-  box-shadow: 0px 2px 5px rgb(236, 236, 236);
+  box-shadow: 0px 2px 10px #ececec;
   border-radius: 10px;
   padding:10px;
 }
@@ -65,15 +74,22 @@ h1 {
 }
 
 .chart-box {
-  display: block;
-  box-sizing: border-box;
-  height: 350px;
-/*   background-color: white;
- */  border-radius: 0 0 0 0px;
+  height: 250px;
+  display: inline;
+/*   background-color: white;*/
+  border-radius: 0 0 0 0px;
   padding: 15px;
   display: inline-block;
 
-  .chart{
+  #chart-1{
+    display: inline !important;
     height: auto;
+  }
+
+  canvas{
+    display: block;
+    box-sizing: border-box;
+    height: 200px;
+    width: 200px;
   }
 }
