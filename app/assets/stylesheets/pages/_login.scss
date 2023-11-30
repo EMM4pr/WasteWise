@@ -1,0 +1,27 @@
+.center-container{
+  margin-top: 50%;
+}
+
+.new-container{
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-color: white;
+  max-width: 500px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.1);
+  margin: 10px;
+  padding: 10px;
+}
+
+.button-new{
+  background-color: #FA7070;
+  color: white;
+  border: 1px solid lightgray;
+  border-radius: 50px;
+  width: 100%;
+}
+
+.link-container a {
+  text-decoration: none;
+  color: black;
+  margin-top: 10px;
+}
