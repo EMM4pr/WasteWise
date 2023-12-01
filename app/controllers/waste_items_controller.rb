@@ -1,5 +1,5 @@
 class WasteItemsController < ApplicationController
-  before_action :set_waste_items, only: %i[show]
+  before_action :set_waste_items, only: %i[show ]
 
   def show
     @locations = Location.joins(:bin_types).where(bin_types: { id: @waste_item.bin_type.id })
