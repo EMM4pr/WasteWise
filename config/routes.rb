@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   # Dashboard
   get "about", to: "pages#about"
   # User route with
+  get "/search", to: "waste_items#search"
   resources :waste_items, only: %i[index show new]
 
   resources :user, only: %i[] do
