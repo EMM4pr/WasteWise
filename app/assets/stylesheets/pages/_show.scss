@@ -1,26 +1,30 @@
 .item-container{
   border: 1px solid lightgray;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: white;
   max-width: 500px;
   margin: 10px;
-  box-shadow: 5px 5px 5px rgba(0,0,0,.1);
+  padding: 7px;
+  font-family: 'DM Sans', sans-serif;
+  color: $secondary_green
 }
 
 .map-container{
   border: 1px solid lightgray;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: white;
   max-width: 500px;
   margin: 10px;
-  box-shadow: 5px 5px 5px rgba(0,0,0,.1);
+  padding: 7px;
+  font-family: 'DM Sans', sans-serif;
+  color: $secondary_green
 }
 
 .btn-info{
-  background-color: #FA7070;
+  background-color: #FA7070 !important;
   color: white;
   border: 1px solid lightgray;
-  border-radius: 50px;
+  border-radius: 50px !important;
 }
 
 .waste-container{
@@ -28,4 +32,17 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 5px;
+}
+
+.modal-content{
+  border-radius: 10px;
+}
+
+.modal-body{
+  text-align: justify;
+}
+
+.modal-body p{
+  padding-inline: 3px;
+  margin-bottom: 0rem;
 }
