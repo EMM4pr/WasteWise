@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'vision_analyze', to: 'visions#vision_analyze', as: "visonresult"
   post 'vision/analyze', to: 'visions#analyze'
 
+  get "home", to: "pages#home"
   # Dashboard
   get "about", to: "pages#about"
   # User route with
