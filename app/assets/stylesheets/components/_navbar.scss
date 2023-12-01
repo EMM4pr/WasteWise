@@ -1,16 +1,16 @@
-.navbar-lewagon {
-  color: $secondary_green;
-  justify-content: space-between;
-  background: white;
-  border-width: 80%;
-  border-radius: 10px 10px 0px 0px;
-  height: 60px;
-  top: 0;
-/*   position: fixed;*/
-width: 100%;
-  margin-bottom: 10px;
-}
-
+// .navbar-lewagon {
+//   color: $secondary_green;
+//   justify-content: space-between;
+//   background: white;
+//   border-width: 80%;
+//   border-radius: 10px 10px 0px 0px;
+//   height: 60px;
+//   top: 0;
+// /*   position: fixed;*/
+// width: 100%;
+//   margin-bottom: 10px;
+// }
+/*
 .nav-link{
   color: white;
   font-family: 'Libre Baskerville', serif;
@@ -34,4 +34,41 @@ width: 100%;
   color: $secondary_green;
   font-size: 16px;
   width: 30px;
+}
+ */
+
+ .navbar-lewagon {
+  color: $secondary_green;
+  justify-content: space-between;
+  background: white;
+  border-width: 80%;
+  border-radius: 10px 10px 0px 0px;
+  height: 60px;
+  top: 0;
+/*   position: fixed;*/
+width: 100%;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  background: white;
+  position: absolute;
+    width: 100%;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.custom-menu{
+  border-radius: 10px;
+  border: 1px solid #adb5bd;
+  text-align: right;
+  width: 164px;
+  position: relative;
+  left: 58%;
+  background-color: white;
+  padding: 14px;
 }

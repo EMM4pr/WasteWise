@@ -17,13 +17,19 @@
   </head>
 
   <body style="font-family: 'DM Sans', sans-serif; background-color: #ccdccc">
-    <div class="container_main">
-      <div class="content-container">
+  <div class="container_main">
+    <div class="content-container">
+      <% if user_signed_in? %>
         <%= render "shared/navbar" %>
-        <%= render "shared/flashes" %>
-        <%= yield %>
-        <%= render partial: "shared/footer" %>
-      </div>
+      <% end %>
+      <%= render "shared/flashes" %>
+    <div style="padding-top: 70px; height: 100vh;">
+      <%= yield %>
     </div>
+      <% if user_signed_in? %>
+        <%= render partial: "shared/footer" %>
+      <% end %>
+    </div>
+  </div>
   </body>
 </html>
