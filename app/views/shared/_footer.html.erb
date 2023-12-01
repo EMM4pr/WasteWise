@@ -3,10 +3,12 @@
     <%= image_tag "home-pic", class: "", alt: "home button" %>
 <% end %>
   <div class="camera">
-      <%= image_tag "camera-pic", class: "", alt: "camera" %>
+    <%= link_to new_waste_item_path, class: "" do %>
+      <%= image_tag "camera-pic", class: "", alt: "search button" %>
+    <% end %>
   </div>
   <div>
-    <%= link_to root_path, class: "" do %>
+    <%= link_to visonresult_path, class: "" do %>
       <%= image_tag "search-pic", class: "", alt: "search button" %>
     <% end %>
   </div>
