@@ -1,23 +1,23 @@
-.content-container{
-  position: relative;
+html, body {
+  height: 100%;
 }
 
-.container_main{
+.container-main{
   margin: 5px;
+  min-height: 100vh;
 }
 
 h1 {
   font-size: 15px;
   font-family: 'DM Sans', sans-serif;
   font-weight: 700;
-  margin-top: 10px;
 }
 
 .progress-box {
-/*   box-shadow: 0px 2px 10px #ececec;
- */  margin-bottom: 10px;
-/*   background-color: hsl(0, 0%, 94%);
- */  border-radius: 10px;
+/*   box-shadow: 0px 2px 10px #ececec;*/
+  margin-bottom: 10px;
+/*   background-color: hsl(0, 0%, 94%); */
+  border-radius: 10px;
   padding: 10px;
   background-color: white;
 }
@@ -56,9 +56,10 @@ h1 {
 .inner-card-white {
   background-color: white;
   margin-bottom: 10px;
-/*   box-shadow: 0px 2px 10px $primary_green;
- */  border-radius: 10px;
+/*   box-shadow: 0px 2px 10px $primary_green;*/
+  border-radius: 10px;
   padding:10px;
+
 }
 
 .grid-card{
@@ -75,23 +76,27 @@ h1 {
   width: 30px;
 }
 
-.chart-box {
-  height: 250px;
-  display: inline;
-/*   background-color: white;*/
-  border-radius: 0 0 0 0px;
-  padding: 15px;
-  display: inline-block;
 
-  #chart-1{
-    display: inline !important;
-    height: auto;
+.dash-card{
+  display: flex;
+  flex-direction: column;
+
+  .chart-box {
+    height: 200px;
+    display: inline;
+  /*   background-color: white;*/
+    border-radius: 0 0 0 0px;
+    padding: 15px;
+
+    canvas{
+      display: block;
+      box-sizing: border-box;
+      height: 200px;
+      width: 200px;
+    }
   }
 
-  canvas{
-    display: block;
-    box-sizing: border-box;
-    height: 200px;
-    width: 200px;
+  #chart-1 {
+    height: 175px !important;
   }
 }
