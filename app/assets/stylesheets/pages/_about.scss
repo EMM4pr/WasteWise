@@ -5,19 +5,18 @@
 }
 
 h1, h2, h3, h4, h5 {
+  color: $secondary_green;
   margin-top: 5px;
   font-family: 'DM Sans', sans-serif;
 }
 
 .box-green {
+  color: $secondary_green;
+  font-size: 15px;
   background-color: $primary_green;
   border-radius: 10px;
   padding: 10px;
   margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-  color: white;
-  box-shadow: 8px 8px 1px #E60F05;
 }
 
 .header-waste {
@@ -55,7 +54,7 @@ h1, h2, h3, h4, h5 {
   color: $secondary_green;
 }
 
-.image-tag {
+.background_image {
   position: relative;
   width: 373px;
   margin-left: 20px;
