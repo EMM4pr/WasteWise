@@ -11,8 +11,8 @@ Rails.application.routes.draw do
 
   # Google Vision Route
   # post '/waste_items/analyze', to: 'waste_items#analyze'
-  post 'vision/analyze', to: 'visions#analyze'
   get 'vision_analyze', to: 'visions#vision_analyze', as: "visonresult"
+  post 'vision/analyze', to: 'visions#analyze'
 
   # Dashboard
   get "about", to: "pages#about"

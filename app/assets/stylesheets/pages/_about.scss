@@ -1,10 +1,16 @@
 .container-about {
-  background-color: #A6CF98;
+  background-color: $primary_green;
   padding-bottom: 10px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  margin-top: 5px;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .box-green {
-  background-color: $dark_green;
+  background-color: $primary_green;
   border-radius: 10px;
   padding: 10px;
   margin-top: 20px;
@@ -16,12 +22,18 @@
 
 .header-waste {
   margin: 10px;
+
+  h5{
+    margin-left: 5px;
+  }
 }
 
 .box-white {
   background-color: white;
   border-radius: 10px;
   margin: 10px;
+  align-items: center;
+  height: 90px;
 }
 
 .box-white:hover {
@@ -31,20 +43,22 @@
 .icon{
   text-align: center;
   margin: 10px;
-  margin-top: 20px;
+  border: 1px solid $primary_green;
   border-radius: 50%;
-  background-color: #A6CF98;
+  background-color: white;
   width: 30px;
   height: 30px;
 }
 
 .text{
   margin-top: 10px;
+  color: $secondary_green;
 }
 
 .image-tag {
   position: relative;
   width: 373px;
+  margin-left: 20px;
 }
 
 .p {
