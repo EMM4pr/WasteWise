@@ -1,0 +1,50 @@
+.container-team {
+  h1{
+    color: rgb(10, 107, 7);
+    text-align: center;
+    font-size: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+}
+
+
+.avatars {
+  :nth-child(odd) {
+    display: flex;
+    justify-content: right;
+  }
+  :nth-child(even) {
+    display: flex;
+    justify-content: left;
+  }
+}
+
+.avatar {
+  width: 130px;
+  border-radius: 50%;
+  border: white 1px solid;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  margin: 16px 8px;
+}
+
+.avatar-large {
+  width: 130px;
+  border-radius: 50%;
+  border: white 1px solid;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.avatar-bordered {
+  width: 130px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+  // margin-left: 300px;
+}
+
+.avatar-square {
+  width: 130px;
+  border-radius: 50px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+}

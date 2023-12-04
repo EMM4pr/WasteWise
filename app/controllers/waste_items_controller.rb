@@ -43,6 +43,9 @@ class WasteItemsController < ApplicationController
     end
   end
 
+  def search
+  end
+
   private
 
   def set_waste_items
