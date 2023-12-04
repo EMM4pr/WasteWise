@@ -1,0 +1,6 @@
+<%# create button with chart colors %>
+
+<% colors = ["#8A584C", "#4A702F", "#FFD50B"]%>
+<% @bin_types_count.keys.each_with_index do |bin, index| %>
+  <%= link_to "#{bin}", root_path("#{bin}": true), style: "color: #{colors[index]}" %>
+<% end %>
