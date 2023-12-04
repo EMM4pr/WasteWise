@@ -9,6 +9,8 @@ gem "rails", "~> 7.1.2"
 gem "sprockets-rails"
 # random comment
 
+gem "pg_search"
+
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
