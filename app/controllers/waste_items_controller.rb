@@ -14,19 +14,19 @@ class WasteItemsController < ApplicationController
   end
 
   def search
-    if params[:query]
-      @wasteitem = WasteItem.where("title ILIKE ")
-    end
+    # if params[:query]
+    #   @wasteitem = WasteItem.where("title ILIKE ")
+    # end
 
-    @locations = Location.joins(:bin_types).where(bin_types: { id: @waste_item.bin_type.id })
-    @markers = @locations.geocoded.map do |location|
-      {
-        lat: location.latitude,
-        lng: location.longitude,
-        marker_html: render_to_string(partial: "marker"),
-        info_window_html: render_to_string(partial: "info_window", locals: {location: location})
-      }
-    end
+    # @locations = Location.joins(:bin_types).where(bin_types: { id: @waste_item.bin_type.id })
+    # @markers = @locations.geocoded.map do |location|
+    #   {
+    #     lat: location.latitude,
+    #     lng: location.longitude,
+    #     marker_html: render_to_string(partial: "marker"),
+    #     info_window_html: render_to_string(partial: "info_window", locals: {location: location})
+    #   }
+    # end
   end
 
   def index
