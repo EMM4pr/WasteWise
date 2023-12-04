@@ -16,6 +16,7 @@ export default class extends Controller {
     })
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
+    this.#showUserLocation()
   }
 
   #addMarkersToMap() {
@@ -30,9 +31,49 @@ export default class extends Controller {
     })
   }
 
-  #fitMapToMarkers() {
+  #fitMapToMarkers(userLocation) {
     const bounds = new mapboxgl.LngLatBounds()
-    this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
+    console.log(userLocation)
+      if (userLocation) {
+        bounds.extend([userLocation.lng, userLocation.lat]);
+      } else {
+        console.log("marker-location")
+        this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
+      }
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+    }
+
+  #showUserLocation() {
+    if (navigator.geolocation) {
+      // Get the user's current position
+      navigator.geolocation.getCurrentPosition(
+        position => {
+          const { latitude, longitude } = position.coords;
+          const userLocation = {lat: latitude, lng: longitude }
+
+          const userMarker = document.createElement("div");
+          userMarker.className = "user-marker";
+
+          const popup = new mapboxgl.Popup().setHTML("You are here!");
+
+          // Add the marker to the map
+          new mapboxgl.Marker(userMarker)
+          .setLngLat([longitude, latitude])
+          .setPopup(popup)
+          .addTo(this.map);
+
+          this.#fitMapToMarkers(userLocation);
+        },
+        error => {
+          console.error("Error getting user location:", error);
+          // Fit the map bounds without the user's location if an error occurs
+          this.#fitMapToMarkers(userLocation);
+        }
+      );
+    } else {
+      console.error("Geolocation is not supported by your browser");
+      // Fit the map bounds without the user's location if geolocation is not supported
+      this.#fitMapToMarkers(userLocation);
+    }
   }
 }
