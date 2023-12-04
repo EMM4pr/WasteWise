@@ -46,12 +46,31 @@
   height: 60px;
   top: 0;
 /*   position: fixed;*/
-width: 100%;
+  width: 100%;
   margin-bottom: 10px;
   justify-content: space-between;
   background: white;
   position: sticky;
     width: 100%;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: $secondary_green;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+
+  .address{
+    display: flex;
+    color: $secondary_green;
+    font-weight: 800;
+  }
+}
+
+.navbar-toggler {
+  font-size: 18px;
+  color: $secondary_green;
+  border: 1px solid white;
 }
 
 .navbar-lewagon .navbar-collapse {

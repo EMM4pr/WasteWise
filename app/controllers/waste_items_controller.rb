@@ -1,4 +1,5 @@
 class WasteItemsController < ApplicationController
+  skip_before_action :verify_authenticity_token, :only => [ :create]
   before_action :set_waste_items, only: %i[show ]
 
   def show
@@ -11,6 +12,22 @@ class WasteItemsController < ApplicationController
         info_window_html: render_to_string(partial: "info_window", locals: {location: location})
       }
     end
+  end
+
+  def search
+    # if params[:query]
+    #   @wasteitem = WasteItem.where("title ILIKE ")
+    # end
+
+    # @locations = Location.joins(:bin_types).where(bin_types: { id: @waste_item.bin_type.id })
+    # @markers = @locations.geocoded.map do |location|
+    #   {
+    #     lat: location.latitude,
+    #     lng: location.longitude,
+    #     marker_html: render_to_string(partial: "marker"),
+    #     info_window_html: render_to_string(partial: "info_window", locals: {location: location})
+    #   }
+    # end
   end
 
   def index

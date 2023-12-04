@@ -1,4 +1,4 @@
-.footer{
+.footer {
   width: 100%;
   margin: 0 auto;
   bottom: 0px;
@@ -10,29 +10,22 @@
   border-radius: 0px 0px 10px 10px;
   position: sticky;
   box-shadow: 2px 0px 0px $primary_green;
+
   img {
     height: 30px;
   }
 
-  .symbol{
+  .symbol {
     color: $secondary_green;
     height: 30px;
   }
 }
 
-.camera {
-/*   background-color: white;
- */  border-radius: 50%;
-/*   border: 3px solid white;
- */  padding: 10px;
-/*   box-shadow: 0 3px 3px $secondary_green;
- */}
+.camera { 
+  /* background-color: white; */
+  border-radius: 50%;
+  /* border: 3px solid white; */
+  padding: 10px;
+  /* box-shadow: 0 3px 3px $secondary_green; */
+}
 
-
-
-
-
-
-
-
- 
