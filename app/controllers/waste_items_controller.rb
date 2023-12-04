@@ -1,4 +1,5 @@
 class WasteItemsController < ApplicationController
+  skip_before_action :verify_authenticity_token, :only => [ :create]
   before_action :set_waste_items, only: %i[show ]
 
   def show
