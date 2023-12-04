@@ -31,6 +31,7 @@ class WasteItemsController < ApplicationController
   end
 
   def index
+    @disposal_records = current_user.disposal_records
     @waste_items = WasteItem.all.order(:id)
     @locations = Location.new
     @categories = Category.new
@@ -44,7 +45,6 @@ class WasteItemsController < ApplicationController
 
   def create
     @waste_item = WasteItem.new(waste_item_params)
-    # save user of wasteitem appliance as current user
     @waste_item.user = current_user
     @waste_item.bin_type = BinType.all.sample
     @waste_item.category = Category.all.sample

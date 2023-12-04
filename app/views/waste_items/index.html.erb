@@ -1,5 +1,5 @@
 <div class="card-white">
-  <% @waste_items.each do |waste_item|%>
+  <% @disposal_records.each do |disposal_record|%>
     <div id="item-cards" class="inner-card-white d-flex">
 
       <div class="photo">
@@ -7,18 +7,17 @@
 
       <div class="item-info">
         <div>
-        <%= waste_item.name %>
+        <%= disposal_record.waste_item.name %>
         </div>
         <div>
-        <%= waste_item.bin_type.name %>
+        <%= disposal_record.waste_item.bin_type.name %>
         </div>
       </div>
+
       <div id="learn-more">
         Learn More
-
-
       </div>
 
     </div>
   <%end%>
-    </div>
+</div>

@@ -1,18 +1,25 @@
-// app/javascript/controllers/disposal_modal_controller.js
-import { Controller } from "stimulus";
+import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["modal"];
+
+  static targets = ["modal", "button"];
 
   connect() {
-    // Delay the modal display after 5 seconds
     setTimeout(() => {
-      this.modalTarget.classList.add("show");
+      this.show();
     }, 5000);
   }
 
-  handleItemDisposed() {
+  show() {
+    this.element.classList.add("show")
+    this.element.style.display = "block"
+  }
 
-    console.log('Item disposed!'); // Replace with your logic
+  close() {
+    this.element.classList.remove("show")
+  }
+
+  save(element){
+    this.element.save()
   }
 }
