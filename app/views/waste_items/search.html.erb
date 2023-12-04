@@ -1,6 +1,6 @@
 <%= simple_form_for :search, url: root_path, method: :get do |f| %>
   <div class="search-form-control form-group">
-    <input class="form-control string required" type="text" style="border-radius: 50px" name="search[query]" id="search_query" />
+    <input class="form-control string required" type="text" style="border-radius: 50px" name="search[query]" id="search_query" placeholder="Search for waste item" />
     <button name="button" type="submit" class="btn btn-info">
       <i class="fas fa-search"></i> Search
     </button>
@@ -53,4 +53,12 @@
     <h2>Bulky waste</h2>
     <p>Bin designed for bulky residual waste that cannot be recycled, such as carpets, timber, and electrical devices, ensuring proper disposal of larger non-recyclable items</p>
   </div>
+</div>
+
+
+<div class="map-container">
+  <div style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
