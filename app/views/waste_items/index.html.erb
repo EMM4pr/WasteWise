@@ -1,8 +1,9 @@
-<div class="card-white">
+<div class="card-white" style="height: 100vh;">
   <% @waste_items.each do |waste_item|%>
     <div id="item-cards" class="inner-card-white d-flex">
 
       <div class="photo">
+        <%= cl_image_tag waste_item.photo.key, class: "card-img-top img-fluid object-fit: cover;", crop: :fill %>
       </div>
 
       <div class="item-info">
