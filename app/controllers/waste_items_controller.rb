@@ -1,6 +1,6 @@
 class WasteItemsController < ApplicationController
-  skip_before_action :verify_authenticity_token, :only => [ :create]
-  before_action :set_waste_items, only: %i[show ]
+  skip_before_action :verify_authenticity_token, only: %i[create]
+  before_action :set_waste_items, only: %i[show]
 
   def show
     @locations = Location.joins(:bin_types).where(bin_types: { id: @waste_item.bin_type.id })
@@ -12,6 +12,7 @@ class WasteItemsController < ApplicationController
         info_window_html: render_to_string(partial: "info_window", locals: {location: location})
       }
     end
+    @disposal_record = DisposalRecord.new
   end
 
   def search

@@ -1,13 +1,10 @@
 <div class="footer" data-controller="footer">
   <%= link_to root_path, class: "" do %>
-    <%= image_tag "home-pic.svg", class: "", alt: "home button" %>
+    <%= image_tag "navbars-icon/home-pic.svg", class: "", alt: "home button" %>
 <% end %>
   <div class="camera">
-
   <%= simple_form_for [current_user, WasteItem.new], url: user_waste_items_path(current_user), method: :post, data: {footer_target: "simpleform"}, html: {multipart: true} do |f| %>
   <% end %>
-
-
 
 <input
 class="d-none"
@@ -19,7 +16,7 @@ class="d-none"
         data-footer-target="camera"
         />
 
-  <%= image_tag "camera-pic.svg", class: "", alt: "search button", data: {action: "click->footer#activateCamera"} %>
+  <%= image_tag "navbars-icon/camera-pic.svg", class: "", alt: "search button", data: {action: "click->footer#activateCamera"} %>
 
 
 </div>
@@ -27,7 +24,7 @@ class="d-none"
 
   <div>
     <%= link_to search_path, class: "" do %>
-      <%= image_tag "search-pic.svg", class: "", alt: "search button" %>
+      <%= image_tag "navbars-icon/search-pic.svg", class: "", alt: "search button" %>
     <% end %>
   </div>
 </div>

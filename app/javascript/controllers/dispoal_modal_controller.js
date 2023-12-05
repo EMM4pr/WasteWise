@@ -19,7 +19,24 @@ export default class extends Controller {
     this.element.classList.remove("show")
   }
 
-  save(element){
-    this.element.save()
-  }
+  save(event){
+    /* var audio = new Audio('audio_file.mp3');
+    audio.play(); */
+
+    console.log("fetching")
+    // event listener post reqeust
+    // call create method on controller via fetch request as a post
+    event.preventDefault();
+
+    fetch(this.formTarget.action, {
+      method: "POST", //  Stimulus value
+      headers: { "Accept": "application/json" }, // type of info
+      body: JSON.stringify({}) //what info
+    })
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data)
+      })
+
+    }
 }

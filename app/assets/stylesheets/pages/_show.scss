@@ -3,9 +3,9 @@
   border-radius: 10px;
   background-color: white;
   max-width: 500px;
-  margin: 10px;
-  padding: 7px;
-  font-family: 'DM Sans', sans-serif;
+  margin-top: 10px;
+/*   padding: 7px;
+ */  font-family: 'DM Sans', sans-serif;
   color: $secondary_green
 }
 
@@ -14,10 +14,19 @@
   border-radius: 10px;
   background-color: white;
   max-width: 500px;
-  margin: 10px;
-  padding: 7px;
-  font-family: 'DM Sans', sans-serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+/*   padding: 7px;
+ */  font-family: 'DM Sans', sans-serif;
   color: $secondary_green
+}
+
+.card-img, .card-img-top {
+  border-radius: 10px;
+}
+
+.mapboxgl-canvas{
+  border-radius: 10px;
 }
 
 .btn-info{

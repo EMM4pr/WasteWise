@@ -3,12 +3,12 @@ html, body {
 }
 
 .container-main{
-  margin: 5px;
+  margin: 7px;
   min-height: 100vh;
 }
 
 h1 {
-  margin-top: 54px;
+  margin-top: 30px;
   font-size: 20px;
   font-family: 'DM Sans', sans-serif;
   font-weight: 700;
@@ -21,14 +21,25 @@ h1 {
   font-weight: 700;
 }
 
+.divider{
+  margin-top: 10px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #e0e0e0, transparent);
+  margin: 5px 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .rewards {
   position: relative;
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 55px;
   overflow-x: auto;
   white-space: nowrap;
 
   .reward {
+    display: flex;
+    align-items: center;
     margin: 0px 10px 0px 0px;
     font-weight: 800;
     border-radius: 10px;
@@ -36,9 +47,16 @@ h1 {
     height: 50px;
     padding: 10px;
     text-align: center;
+
+    img {
+      margin-right: 5px;
+      height: 30px;
+    }
   }
 
   .empty-reward {
+    display: flex;
+    align-items: center;
     margin: 0px 10px 0px 0px;
     filter: blur(1px);
     color: lightgray;
@@ -48,6 +66,11 @@ h1 {
     height: 50px;
     padding: 10px;
     text-align: center;
+
+    img {
+      margin-right: 5px;
+      height: 30px;
+    }
   }
 }
 
@@ -88,16 +111,14 @@ h1 {
   color: $secondary_green;
   background-color: $primary_green;
   margin-bottom: 10px;
-  padding: 7px;
 }
 
 .inner-card-white {
   background-color: white;
-  margin-bottom: 10px;
-/*   box-shadow: 0px 2px 10px $primary_green;*/
+  margin-bottom: 55px;
+/*box-shadow: 0px 2px 10px $primary_green;*/
   border-radius: 10px;
   padding:10px;
-
 }
 
 .grid-card{
