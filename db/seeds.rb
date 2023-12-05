@@ -1,126 +1,58 @@
-# Clear existing data
+
+# Category.destroy_all
+
+require "open-uri"
+
 DisposalRecord.destroy_all
+WasteItem.destroy_all
 LocationBinType.destroy_all
+Location.destroy_all
 BinType.destroy_all
 User.destroy_all
-Category.destroy_all
-WasteItem.destroy_all
-Location.destroy_all
 
-# Create users
-alex = User.create(username: 'alex', email: 'alex@test.com', password: '123456')
-emma = User.create(username: 'emma', email: 'emma@test.com', password: '123456')
-shubam = User.create(username: 'shubam', email: 'shubam@test.com', password: '123456')
-tony = User.create(username: 'tony', email: 'tony@test.com', password: '123456')
-olli = User.create(username: 'olli', email: 'olli@test.com', password: '123456')
-adam = User.create(username: 'adam', email: 'adam@test.com', password: '123456')
+# maybe one more for backup
+user = User.new(email: "emma@test.com", password: "123456", first_name: "Emma", last_name: "Preysing")
+file = URI.open("https://media.licdn.com/dms/image/D5603AQFviLMSU6nNzg/profile-displayphoto-shrink_800_800/0/1699914603422?e=1706140800&v=beta&t=-_nEa2-rLt75uyGXEdjPwaxbC3-ANx_wEsCkXfLz6hQ")
+user.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
+user.save!
 
-# Create bin types
-yellow_bin = BinType.create(
-  name: 'Recycling',
-  description: 'Container for recyclable items, such as plastic, pots, tools, cutlery, foam materials, and metal containers, promoting environmentally friendly waste disposal.'
-)
+# only our bins types
+bin_type = BinType.new(name: "Battery Recycling Bin", description: "For used batteries. These bins are in most supermarkets, electronics stores and hardware stores, usually near the door. Rossmann and dm also recycle batteries.")
+file = URI.open("https://allaboutberlin.com/images/content1x/lidl-battery-recycling-akku-entsorgung.jpg")
+bin_type.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+bin_type.save!
 
-organic_bin = BinType.create(
-  name: 'Organic Waste',
-  description: 'Bin designated for organic waste, including fruit/vegetable leftovers, peelings, coffee grounds, tea, eggshells, and green cuttings, fostering composting practices.'
-)
+# either enough to show all on map, or enough for one example during presentation
+location1 = Location.new(name: "DM", address: 'Friedrichstraße 191. 10117 Berlin')
+location1.save!
+location2 = Location.new(name: "Lidl", address: 'Charlottenstraße 2.  10969 Berlin')
+location2.save!
+location3 = Location.new(name: "Rewe", address: 'Friedrichstraße 60. 10117 Berlin')
+location3.save!
+location4 = Location.new(name: "Cyberport", address: 'Friedrichstraße 50-55. 10117 Berlin')
+location4.save!
+location5 = Location.new(name: "Rossman", address: 'Rudi-Dutschke-Straße 29. 10969 Berlin')
+location5.save!
 
-blue_paper_bin = BinType.create(
-  name: 'Paper',
-  description: 'Container for paper and cardboard items, encompassing packaging, newspapers, magazines, catalogs, writing/printing paper, and cardboard, supporting paper recycling efforts.'
-)
+# same as above
+location_bin_type = LocationBinType.new(location: location1, bin_type: bin_type )
+location_bin_type.save!
+location_bin_type = LocationBinType.new(location: location2, bin_type: bin_type )
+location_bin_type.save!
+location_bin_type = LocationBinType.new(location: location3, bin_type: bin_type )
+location_bin_type.save!
+location_bin_type = LocationBinType.new(location: location4, bin_type: bin_type )
+location_bin_type.save!
+location_bin_type = LocationBinType.new(location: location5, bin_type: bin_type )
+location_bin_type.save!
 
-glass_bin = BinType.create(
-  name: 'Glass',
-  description: 'Dedicated bin for glass items, including jars, bottles, and any other glass materials, facilitating the recycling process for glass products.'
-)
+# enough to fill index page / Dashboard.
+waste_item = WasteItem.new(user: user, bin_type: bin_type, name: "Battery")
+file = URI.open("https://img.huffingtonpost.com/asset/5d27b8bf2600004f00044323.jpeg?ops=scalefit_720_noupscale")
+waste_item.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+waste_item.save!
 
-household_bin = BinType.create(
-  name: 'Household Waste',
-  description: 'Bin for residual waste that cannot be recycled, encompassing items like hygiene products and tissues, providing a disposal solution for non-recyclable household waste.'
-)
+# disposal_record enough to show the badge logic and trees on Dashboard
 
-bulky_bin = BinType.create(
-  name: 'Bulky Waste',
-  description: 'Bin designed for bulky residual waste that cannot be recycled, such as carpets, timber, and electrical devices, ensuring proper disposal of larger non-recyclable items.'
-)
-
-# Create categories
-categories_data = [
-  { name: 'Plastic', description: 'Recyclable items', credits: 5 },
-  { name: 'Organic Waste', description: 'Fruit/vegetable leftovers, peelings, including citrus, Coffee grounds, filters, tea, teabags, eggshells, Green cuttings/trimmings, leaves, flowers', credits: 10 },
-  { name: 'Paper', description: 'Paper and cardboard packaging, newspapers, magazines, catalogs, catalogs, telephone books, brochures, writing and printing paper, cardboard, Paper bags (without plastic layer), Envelopes (without plastic layer)', credits: 7 },
-  { name: 'Compost', description: 'Biodegradable kitchen and garden waste, fruit and vegetable waste, coffee grounds, eggshells, small amounts of meat and fish', credits: 8 },
-  { name: 'Packging', description: 'Lightweight packaging made of plastic, metal, or composite materials, such as beverage cartons, yogurt pots, and plastic packaging', credits: 6 },
-  { name: 'General waste', description: 'Residual waste that cannot be recycled', credits: 3 }
-]
-
-categories_data.each do |category|
-  Category.create(category)
-end
-
-puts "Creating locations"
-locations = [
-  { name: 'Entsorgo', address: 'Schillerpromenade 39. 12049 Berlin'},
-  { name: 'BSR', address: 'Asgardstraße 3. 13089 Berlin'},
-  { name: 'DM', address: 'Friedrichstraße 191. 10117 Berlin'},
-  { name: 'Waste not', address: 'Katzbachstraße 5. 10965 Berlin'},
-]
-
-locations.each do |location|
-  Location.create!(location)
-end
-
-puts "Creating locations and bin types"
-
-locations_bin_types = [
-  {location: Location.all.sample, bin_type: yellow_bin},
-  {location: Location.all.sample, bin_type: yellow_bin},
-  {location: Location.all.sample, bin_type: yellow_bin},
-  {location: Location.all.sample, bin_type: blue_paper_bin},
-  {location: Location.all.sample, bin_type: blue_paper_bin},
-  {location: Location.all.sample, bin_type: organic_bin},
-  {location: Location.all.sample, bin_type: organic_bin},
-  {location: Location.all.sample, bin_type: organic_bin}
-]
-
-locations_bin_types.each do |bin_type|
-  LocationBinType.create!(bin_type)
-end
-
-puts 'Finished with locations!'
-
-# Create 20 waste items & disposal records
-20.times do |index|
-  user = index.even? ? alex : emma
-  bin_type = case index % 6
-            when 0 then yellow_bin
-            when 1 then organic_bin
-            when 2 then blue_paper_bin
-            when 3 then organic_bin
-            when 4 then glass_bin
-            else household_bin
-            end
-
-  category = Category.all.sample
-
-  waste_item = WasteItem.create(
-    user: user,
-    bin_type: bin_type,
-    category: category,
-    name: "Item #{index + 1}"
-  )
-
-  location = Location.first
-
-  # Create disposable_records
-  DisposalRecord.create(
-    user: user,
-    location: location,
-    waste_item: waste_item,
-    disposal_date: "date"
-  )
-end
-
-puts 'Finished with all the seeds! 🗑️ 🗑️ 🗑️'
+disposal_record = DisposalRecord.new(user: user, location: location1, waste_item: waste_item, disposal_date: "date")
+disposal_record.save!

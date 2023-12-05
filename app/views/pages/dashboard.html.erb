@@ -1,6 +1,7 @@
 <div class="card-white" <%# style="height: 100vh;" %> data-controller="popup" data-popup-level-value="<%= @disposal_record.user_level(current_user) %>">
   <div id="welcome-header">
-    Welcome, <%= current_user.username.capitalize if user_signed_in?%>
+    <%= cl_image_tag current_user.photo.key, class: "card-img-top img-fluid object-fit: cover;", crop: :fill %>
+    Welcome, <%= current_user.first_name.capitalize if user_signed_in?%>
   </div>
 
   <% level1 = (1...5) %>
@@ -197,7 +198,6 @@
                 <div>
                 <%= disposal_record.waste_item.name%>
                 </div>
-
                 <div>
                 <%= disposal_record.waste_item.bin_type.name%>
                 </div>

@@ -11,6 +11,9 @@ class PagesController < ApplicationController
   def about
   end
 
+  def team_page
+  end
+
   def dashboard
     @locations = Location.all
     # if user_signed_in?

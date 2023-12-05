@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_30_153243) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_05_153858) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -81,8 +81,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_153243) do
   create_table "locations", force: :cascade do |t|
     t.string "name"
     t.string "address"
-    t.integer "latitude"
-    t.integer "longitude"
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -105,6 +105,9 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_153243) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.boolean "admin", default: false, null: false
+    t.boolean "photo", default: false, null: false
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -112,13 +115,11 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_153243) do
   create_table "waste_items", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "bin_type_id", null: false
-    t.bigint "category_id", null: false
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo_url"
     t.index ["bin_type_id"], name: "index_waste_items_on_bin_type_id"
-    t.index ["category_id"], name: "index_waste_items_on_category_id"
     t.index ["user_id"], name: "index_waste_items_on_user_id"
   end
 
@@ -130,6 +131,5 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_153243) do
   add_foreign_key "location_bin_types", "bin_types"
   add_foreign_key "location_bin_types", "locations"
   add_foreign_key "waste_items", "bin_types"
-  add_foreign_key "waste_items", "categories"
   add_foreign_key "waste_items", "users"
 end
