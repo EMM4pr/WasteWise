@@ -1,5 +1,5 @@
 class DisposalRecordsController < ApplicationController
-  # before_action :set_disposal_record, only: %i[show edit update destroy]
+  before_action :set_disposal_record, only: %i[destroy]
 
   def create
     @disposal_record = DisposalRecord.new
@@ -10,13 +10,13 @@ class DisposalRecordsController < ApplicationController
     @disposal_record.location = @waste_item.bin_type.location_bin_types.first.location
 
     if @disposal_record.save
-      redirect_to root_path, notice: 'Disposal record was successfully created.'
+      redirect_to root_path(origin: "create"), notice: 'Disposal record was successfully created.'
     end
   end
 
-  # def destroy
-  #   @disposal_record.destroy
-  # end
+  def destroy
+    @disposal_record.destroy
+  end
 
   private
 

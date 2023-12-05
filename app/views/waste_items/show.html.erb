@@ -43,14 +43,14 @@
   </div>
 
   <p style="padding: 5px;">Find <%= @waste_item.bin_type.name %> bins on the map below</p>
-  </div>
+</div>
 
-  <div class="map-container">
-    <div style="width: 100%; height: 600px;"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-    <p style="padding: 5px;">Navigate to the nearest <%= @waste_item.bin_type.name %> with Google Maps by clicking on the address!</p>
+<div class="map-container">
+  <div style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <p style="padding: 5px;">Navigate to the nearest <%= @waste_item.bin_type.name %> with Google Maps by clicking on the address!</p>
 </div>
 
 

@@ -33,11 +33,12 @@ h1 {
 .rewards {
   position: relative;
   display: flex;
-  margin-bottom: 55px;
+  margin-bottom: 35px;
   overflow-x: auto;
   white-space: nowrap;
 
   .reward {
+    font-size: 15px;
     display: flex;
     align-items: center;
     margin: 0px 10px 0px 0px;
@@ -55,6 +56,7 @@ h1 {
   }
 
   .empty-reward {
+    font-size: 15px;
     display: flex;
     align-items: center;
     margin: 0px 10px 0px 0px;
@@ -81,6 +83,10 @@ h1 {
   border-radius: 10px;
   padding: 10px;
   background-color: white;
+
+  .text-box{
+    font-size: 15px;
+  }
 }
 
 .progress-goal{
@@ -115,7 +121,7 @@ h1 {
 
 .inner-card-white {
   background-color: white;
-  margin-bottom: 55px;
+  margin-bottom: 35px;
 /*box-shadow: 0px 2px 10px $primary_green;*/
   border-radius: 10px;
   padding:10px;
@@ -128,7 +134,6 @@ h1 {
   padding: 20px;
   border-radius: 20px;
   height: 250px;
-  border: 1px solid $primary_green;
 }
 
 .baum {

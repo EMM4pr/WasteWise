@@ -1,4 +1,4 @@
-<div class="card-white" <%# style="height: 100vh;" %>>
+<div class="card-white" <%# style="height: 100vh;" %> data-controller="popup" data-popup-level-value="<%= @disposal_record.user_level(current_user) %>">
   <div id="welcome-header">
     Welcome, <%= current_user.username.capitalize if user_signed_in?%>
   </div>
@@ -19,16 +19,16 @@
         <%= level2.first - current_user.disposal_records.count %> items left to your next reward.
 
       <% elsif level2.include?(current_user.disposal_records.count) %>
-        <%= level3.first - current_user.disposal_records.count %> items left to your next reward.
+        <strong> <%= level3.first - current_user.disposal_records.count %> </strong> items left to your next reward.
 
       <% elsif level3.include?(current_user.disposal_records.count) %>
-        <%= level4.first - current_user.disposal_records.count %> items left to your next reward.
+        <strong> <%= level4.first - current_user.disposal_records.count %> </strong> items left to your next reward.
 
       <% elsif level4.include?(current_user.disposal_records.count) %>
-        <%= level5.first - current_user.disposal_records.count %> items left to your next reward.
+        <strong> <%= level5.first - current_user.disposal_records.count %> </strong> items left to your next reward.
 
       <% elsif level5.include?(current_user.disposal_records.count) %>
-        <%= level6.first - current_user.disposal_records.count %> items left to your next reward.
+        <strong> <%= level6.first - current_user.disposal_records.count %> </strong> items left to your next reward.
 
       <% elsif level6.include?(current_user.disposal_records.count) %>
         <%= 65 - current_user.disposal_records.count %> items left to your next reward.
