@@ -1,6 +1,7 @@
 <div class="card-white" <%# style="height: 100vh;" %>>
   <div id="welcome-header">
-    Welcome, <%= current_user.username.capitalize if user_signed_in?%>
+    <%= cl_image_tag current_user.photo.key, class: "card-img-top img-fluid object-fit: cover;", crop: :fill %>
+    Welcome, <%= current_user.first_name.capitalize if user_signed_in?%>
   </div>
 
   <div class="progress-box">
@@ -128,7 +129,7 @@
                 <%= disposal_record.waste_item.name%>
                 </div>
                 <div>
-                <%= disposal_record.waste_item.category.name%>
+                <%= disposal_record.waste_item.bin_type.name%>
                 </div>
                 <div>
                 <%= disposal_record.waste_item.bin_type.name%>
