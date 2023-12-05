@@ -31,7 +31,7 @@ class WasteItemsController < ApplicationController
   end
 
   def index
-    @waste_items = WasteItem.all.order(:id)
+    @waste_items = WasteItem.order('created_at DESC')
     @locations = Location.new
     @categories = Category.new
     @waste_items = @waste_items.where(tag: params[:query]) if params[:query].present?
@@ -58,6 +58,9 @@ class WasteItemsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def search
   end
 
   private
