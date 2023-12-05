@@ -1,18 +1,43 @@
-// app/javascript/controllers/disposal_modal_controller.js
-import { Controller } from "stimulus";
+import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["modal"];
+
+  static targets = ["modal", "button"];
 
   connect() {
-    // Delay the modal display after 5 seconds
     setTimeout(() => {
-      this.modalTarget.classList.add("show");
+      this.show();
     }, 5000);
   }
 
-  handleItemDisposed() {
-
-    console.log('Item disposed!'); // Replace with your logic
+  show() {
+    this.element.classList.add("show")
+    this.element.style.display = "block"
   }
+
+  close() {
+    this.element.classList.remove("show")
+    
+  }
+
+  save(event){
+    /* var audio = new Audio('audio_file.mp3');
+    audio.play(); */
+
+    console.log("fetching")
+    // event listener post reqeust
+    // call create method on controller via fetch request as a post
+    event.preventDefault();
+
+    fetch(this.formTarget.action, {
+      method: "POST", //  Stimulus value
+      headers: { "Accept": "application/json" }, // type of info
+      body: JSON.stringify({}) //what info
+    })
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data)
+      })
+
+    }
 }

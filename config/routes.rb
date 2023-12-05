@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
-
+  get 'disposal_records/create'
+  # Root path -> dashboard
   root to: "pages#dashboard"
+  # User paths
   devise_for :users
 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Google Vision Route
@@ -14,9 +12,12 @@ Rails.application.routes.draw do
   get 'vision_analyze', to: 'visions#vision_analyze', as: "visonresult"
   post 'vision/analyze', to: 'visions#analyze'
 
+  # Home page route
   get "home", to: "pages#home"
-  # Dashboard
+
+  # About route
   get "about", to: "pages#about"
+
   # User route with
   get "/search", to: "waste_items#search"
   get "/team", to: "pages#team"
@@ -25,6 +26,9 @@ Rails.application.routes.draw do
   resources :user, only: %i[] do
     resources :waste_items, only: %i[new create index new]
   end
+
+  # Disposal record route
+  resources :disposal_records, only: [:create]
 
   require "sidekiq/web"
   authenticate :user, ->(user) { user.admin? } do

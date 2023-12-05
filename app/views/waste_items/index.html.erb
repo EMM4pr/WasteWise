@@ -1,5 +1,4 @@
 <div data-controller="hello">
-
   <div class="card-white">
     <% @waste_items[0..10].each do |waste_item|%>
       <div id="item-cards" class="inner-card-white d-flex">
@@ -22,7 +21,6 @@
         </div>
         <div id="learn-more">
         </div>
-
       </div>
     <%end%>
 
@@ -50,7 +48,6 @@
           <div id="learn-more">
           </div>
         </div>
-
       <% end %>
     </div>
     <%= link_to "Show All My Items", "#", data: { action: "click->hello#toggleElement", hello_target: "lol" }, class: "btn btn-info"  %>

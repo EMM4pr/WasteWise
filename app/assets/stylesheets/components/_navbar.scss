@@ -39,19 +39,14 @@
 
  .navbar-lewagon {
   color: $secondary_green;
-  justify-content: space-between;
-  background: white;
-  border-width: 80%;
   border-radius: 10px 10px 0px 0px;
   height: 60px;
   top: 0;
-/*   position: fixed;*/
-  width: 100%;
   margin-bottom: 10px;
   justify-content: space-between;
   background: white;
   position: sticky;
-    width: 100%;
+  width: 100%;
 }
 
 .navbar-brand {
@@ -68,7 +63,7 @@
 }
 
 .navbar-toggler {
-  font-size: 18px;
+  font-size: 15px;
   color: $secondary_green;
   border: 1px solid white;
 }
@@ -78,16 +73,18 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 30px;
+  margin-bottom: 3px;
 }
 
 .custom-menu{
+  margin-top: 9px;
   border-radius: 10px;
   border: 1px solid #adb5bd;
   text-align: right;
   width: 164px;
   position: relative;
-  left: 58%;
+  left: 54%;
   background-color: white;
   padding: 14px;
 }
