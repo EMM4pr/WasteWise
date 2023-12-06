@@ -3,7 +3,8 @@ class WasteItemsController < ApplicationController
   before_action :set_waste_items, only: %i[show]
 
   def show
-    @locations = Location.joins(:bin_types).where(bin_types: { id: @waste_item.bin_type.id })
+    @locations = @waste_item.bin_type.locations
+    # @locations = Location.joins(:bin_types).where(bin_types: { id: @waste_item.bin_type.id })
     @markers = @locations.geocoded.map do |location|
       {
         lat: location.latitude,
@@ -16,18 +17,49 @@ class WasteItemsController < ApplicationController
   end
 
   def search
-    @waste_item = params[:query]
+
+  #   if params[:query].present?
+  #     sql_subquery = <<~SQL
+  #     @bin_types.name ILIKE :query
+  #     OR waste_item.name ILIKE :query
+  #     SQL
+  #     @bin_types = @bin_types.joins(:waste_item).where(sql_subquery, query: "%#{params[:query]}%")
+  #   else
+  #     @bin_types = BinType.all
+  #   end
+  # end
+
+    # if params[:query]
+    #   @wasteitems = WasteItem.where("title ILIKE ")
+    # end
+
+    # @locations = Location.joins(:bin_types).where(bin_types: { id: @waste_item.bin_type.id })
+    # @markers = @locations.geocoded.map do |location|
+    #   {
+    #     lat: location.latitude,
+    #     lng: location.longitude,
+    #     marker_html: render_to_string(partial: "marker"),
+    #     info_window_html: render_to_string(partial: "info_window", locals: {location: location})
+    #   }
+    # end
+
+
+    # @waste_item = params[:query]
 
 
     if params[:query].present?
-      @bin_types = BinType.search_by_waste_item(@waste_item)
+      @bin_types = [WasteItem.find_by(name: params[:query]).bin_type]
+      @locations = @bin_types.first.locations
+      # @waste_items = WasteItem.search_by_name(params[:query])
+      # @bin_types = BinType.search_by_waste_item(@waste_item)
+      # @locations = Location.joins(:bin_types, :location_bin_types).where(waste_items: { name: params[:query] })
       # @locations = Location.joins(:bin_types).where(bin_types: { id: @waste_item.bin_type.id })
     else
       @bin_types = BinType.all
+      @locations = Location.all
       # @locations = Location.joins(:bin_types).where(bin_types: { id: bin_type.id })
     end
 
-    @locations = Location.all
     @markers = @locations.geocoded.map do |location|
       {
         lat: location.latitude,
