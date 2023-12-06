@@ -1,4 +1,6 @@
+
 # Category.destroy_all
+
 require "open-uri"
 
 DisposalRecord.destroy_all
@@ -20,14 +22,6 @@ file = URI.open("https://allaboutberlin.com/images/content1x/lidl-battery-recycl
 bin_type.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 bin_type.save!
 
-
-
-
-
-
-
-
-
 # either enough to show all on map, or enough for one example during presentation
 location1 = Location.new(name: "DM", address: 'Friedrichstraße 191. 10117 Berlin')
 location1.save!
@@ -39,12 +33,6 @@ location4 = Location.new(name: "Cyberport", address: 'Friedrichstraße 50-55. 10
 location4.save!
 location5 = Location.new(name: "Rossman", address: 'Rudi-Dutschke-Straße 29. 10969 Berlin')
 location5.save!
-
-
-
-
-
-
 
 # same as above
 location_bin_type = LocationBinType.new(location: location1, bin_type: bin_type )
