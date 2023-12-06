@@ -2,21 +2,29 @@ import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
 
-  static targets = ["modal", "button"];
+  static targets = ["modal", "button", "disposal"];
 
   connect() {
+    this.showLoading()
     setTimeout(() => {
       this.show();
-    }, 5000);
+    }, 10000);
   }
 
   show() {
-    this.element.classList.add("show")
-    this.element.style.display = "block"
+    this.disposalTarget.classList.add("show")
+    this.disposalTarget.style.display = "block"
+  }
+
+  showLoading() {
+    this.modalTarget.classList.remove("hidden")
+    setTimeout(() => {
+      this.modalTarget.classList.add("d-none")
+    }, 6000)
   }
 
   close() {
-    this.element.classList.remove("show")
+    this.disposalTarget.classList.remove("show")
   }
 
   save(event){
