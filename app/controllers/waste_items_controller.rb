@@ -16,17 +16,17 @@ class WasteItemsController < ApplicationController
   end
 
   def search
-<<<<<<< HEAD
-    if params[:query].present?
-      sql_subquery = <<~SQL
-      @bin_types.name ILIKE :query
-      OR waste_item.name ILIKE :query
-      SQL
-      @bin_types = @bin_types.joins(:waste_item).where(sql_subquery, query: "%#{params[:query]}%")
-    else
-      @bin_types = BinType.all
-    end
-  end
+
+  #   if params[:query].present?
+  #     sql_subquery = <<~SQL
+  #     @bin_types.name ILIKE :query
+  #     OR waste_item.name ILIKE :query
+  #     SQL
+  #     @bin_types = @bin_types.joins(:waste_item).where(sql_subquery, query: "%#{params[:query]}%")
+  #   else
+  #     @bin_types = BinType.all
+  #   end
+  # end
 
     # if params[:query]
     #   @wasteitems = WasteItem.where("title ILIKE ")
@@ -42,8 +42,8 @@ class WasteItemsController < ApplicationController
     #   }
     # end
 
-=======
-    @waste_item = params[:query]
+
+    # @waste_item = params[:query]
 
 
     if params[:query].present?
@@ -64,7 +64,6 @@ class WasteItemsController < ApplicationController
       }
     end
   end
->>>>>>> 48214fd655cec8225959193ef37619ce9e99fef0
 
   def index
     @disposal_records = current_user.disposal_records
