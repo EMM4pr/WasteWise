@@ -15,10 +15,20 @@ h1 {
 }
 
 #welcome-header {
+  display: flex;
+  align-items: center;
   margin: 15px 0px 25px 5px;
   font-size: 20px;
   font-family: 'DM Sans', sans-serif;
   font-weight: 700;
+  border-radius: 50px;
+
+  .profile-img {
+    width: 45px;
+    border-radius: 50px;
+    margin-right: 10px;
+    border: 4px solid $secondary_green;
+  }
 }
 
 .divider{
