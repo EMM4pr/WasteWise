@@ -16,8 +16,7 @@ export default class extends Controller {
   }
 
   close() {
-    this.element.classList.remove("show")
-    
+    this.element.classList.remove()
   }
 
   save(event){

@@ -1,5 +1,8 @@
-require "open-uri"
+
 # Category.destroy_all
+
+require "open-uri"
+
 DisposalRecord.destroy_all
 WasteItem.destroy_all
 LocationBinType.destroy_all
@@ -50,6 +53,6 @@ waste_item.photo.attach(io: file, filename: "nes.png", content_type: "image/png"
 waste_item.save!
 
 # disposal_record enough to show the badge logic and trees on Dashboard
+
 disposal_record = DisposalRecord.new(user: user, location: location1, waste_item: waste_item, disposal_date: "date")
 disposal_record.save!
-
