@@ -1,9 +1,11 @@
 <div class="card-white" <%# style="height: 100vh;" %> data-controller="popup" data-popup-level-value="<%= @disposal_record.user_level(current_user) %>">
+  <%= audio_tag('sound.mp3', controls: true, style: 'display: none;', id: 'audio') %>
+
   <div id="welcome-header">
     <div class="profile-img">
-      <%= cl_image_tag(current_user.photo.key, class: "card-img-top img-fluid object-fit: cover;", crop: :fill) if current_user.photo.attached? %>
+      <%= image_tag "trash-bin.svg", class: "card-img-top img-fluid object-fit: cover;", crop: :fill %>
     </div>
-    Welcome, <%= current_user.first_name.capitalize if user_signed_in?%>
+    <%= current_user.first_name.capitalize if user_signed_in?%>'s Dashboard
   </div>
 
   <% level1 = (1...5) %>

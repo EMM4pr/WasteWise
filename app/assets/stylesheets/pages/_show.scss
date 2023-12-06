@@ -55,3 +55,25 @@
   padding-inline: 3px;
   margin-bottom: 0rem;
 }
+
+.hidden-modal{
+  position: absolute;
+  background: white;
+  z-index: 999;
+  height: 100vh;
+  text-align: center;
+  text-align: justify;
+  padding: 20%;
+  p{
+    margin-top: 30px;
+    font-size: 20px;
+  }
+}
+
+.gif{
+  text-align: center;
+  img{
+  width: 100px;
+  height: auto;
+  }
+}
