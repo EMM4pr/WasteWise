@@ -1,6 +1,8 @@
 <div class="card-white" <%# style="height: 100vh;" %> data-controller="popup" data-popup-level-value="<%= @disposal_record.user_level(current_user) %>">
   <div id="welcome-header">
-    <%= cl_image_tag current_user.photo.key, class: "card-img-top img-fluid object-fit: cover;", crop: :fill %>
+    <div class="profile-img">
+      <%= cl_image_tag(current_user.photo.key, class: "card-img-top img-fluid object-fit: cover;", crop: :fill) if current_user.photo.attached? %>
+    </div>
     Welcome, <%= current_user.first_name.capitalize if user_signed_in?%>
   </div>
 
