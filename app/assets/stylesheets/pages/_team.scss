@@ -1,30 +1,49 @@
 .container-team {
-  h1{
-    color: rgb(10, 107, 7);
-    text-align: center;
-    font-size: 50px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+
+  h1 {
+    color: $secondary_green;
+    text-align: left;
+    font-size: 20px;
+    font-family: 'DM Sans', sans-serif;
+    margin-bottom: 20px;
+    margin-top: 10px;
   }
 }
 
-
 .avatars {
-  :nth-child(odd) {
+
+/*   :nth-child(odd) {
     display: flex;
     justify-content: right;
   }
   :nth-child(even) {
     display: flex;
     justify-content: left;
+  } */
+
+  .avatar-block{
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    .text {
+      display:grid ;
+    }
+  }
+
+  #right{
+    text-align: right;
   }
 }
 
 .avatar {
-  width: 130px;
+  width: 100px;
   border-radius: 50%;
-  border: white 1px solid;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  margin: 16px 8px;
+  border: 4px solid $secondary_green;
+  margin: 10px;
 }
 
 .avatar-large {

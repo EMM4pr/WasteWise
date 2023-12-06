@@ -1,8 +1,5 @@
-
-# Category.destroy_all
-
 require "open-uri"
-
+# Category.destroy_all
 DisposalRecord.destroy_all
 WasteItem.destroy_all
 LocationBinType.destroy_all
@@ -55,10 +52,10 @@ waste_item.photo.attach(io: file, filename: "nes.png", content_type: "image/png"
 waste_item.save!
 
 # disposal_record enough to show the badge logic and trees on Dashboard
-
 disposal_record = DisposalRecord.new(user: user, location: location1, waste_item: waste_item, disposal_date: "date")
 disposal_record.save!
 
+<<<<<<< HEAD
 #BULKY WASTE
 
 bin_type = BinType.new(name: "Bulky Waste", description: "Bin designed for bulky residual waste that cannot be recycled, such as carpets, timber, and electrical devices, ensuring proper disposal of larger non-recyclable items.")
@@ -178,3 +175,5 @@ waste_item = WasteItem.new(user: user, bin_type: bin_type, name: "ashtray")
 file = URI.open("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fde.academic.ru%2Fpictures%2Fdewiki%2F70%2FFull_Ashtray.jpg&f=1&nofb=1&ipt=bb26fa305a08249aace738cf86be95d0ff204b30406ab1945cfa5c37edc3c154&ipo=images")
 waste_item.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 waste_item.save!
+=======
+>>>>>>> 48214fd655cec8225959193ef37619ce9e99fef0

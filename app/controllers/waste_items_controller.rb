@@ -16,6 +16,7 @@ class WasteItemsController < ApplicationController
   end
 
   def search
+<<<<<<< HEAD
     if params[:query].present?
       sql_subquery = <<~SQL
       @bin_types.name ILIKE :query
@@ -41,6 +42,29 @@ class WasteItemsController < ApplicationController
     #   }
     # end
 
+=======
+    @waste_item = params[:query]
+
+
+    if params[:query].present?
+      @bin_types = BinType.search_by_waste_item(@waste_item)
+      # @locations = Location.joins(:bin_types).where(bin_types: { id: @waste_item.bin_type.id })
+    else
+      @bin_types = BinType.all
+      # @locations = Location.joins(:bin_types).where(bin_types: { id: bin_type.id })
+    end
+
+    @locations = Location.all
+    @markers = @locations.geocoded.map do |location|
+      {
+        lat: location.latitude,
+        lng: location.longitude,
+        marker_html: render_to_string(partial: "marker"),
+        info_window_html: render_to_string(partial: "info_window", locals: {location: location})
+      }
+    end
+  end
+>>>>>>> 48214fd655cec8225959193ef37619ce9e99fef0
 
   def index
     @disposal_records = current_user.disposal_records
@@ -71,7 +95,6 @@ class WasteItemsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-
 
   private
 
