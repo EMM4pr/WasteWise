@@ -1,4 +1,6 @@
 <div class="card-white" <%# style="height: 100vh;" %> data-controller="popup" data-popup-level-value="<%= @disposal_record.user_level(current_user) %>">
+  <%= audio_tag('level-up.mp3', muted: true, controls: true, style: 'display: none;', id: 'audio') %>
+  <button id="playAudio" class="hidden"></button>
   <div id="welcome-header">
     <div class="profile-img">
       <%= cl_image_tag(current_user.photo.key, class: "card-img-top img-fluid object-fit: cover;", crop: :fill) if current_user.photo.attached? %>
