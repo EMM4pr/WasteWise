@@ -14,3 +14,4 @@ pin "Chart.bundle", to: "Chart.bundle.js"
 
 pin "mapbox-gl", to: "https://ga.jspm.io/npm:mapbox-gl@2.15.0/dist/mapbox-gl.js"
 pin "process", to: "https://ga.jspm.io/npm:@jspm/core@2.0.1/nodelibs/browser/process-production.js"
+pin "sweetalert2", to: "https://ga.jspm.io/npm:sweetalert2@11.10.0/dist/sweetalert2.all.js"
