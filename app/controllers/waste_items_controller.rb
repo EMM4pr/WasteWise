@@ -17,7 +17,7 @@ class WasteItemsController < ApplicationController
 
   def search
     # if params[:query]
-    #   @wasteitem = WasteItem.where("title ILIKE ")
+    #   @wasteitems = WasteItem.where("title ILIKE ")
     # end
 
     # @locations = Location.joins(:bin_types).where(bin_types: { id: @waste_item.bin_type.id })
@@ -35,7 +35,7 @@ class WasteItemsController < ApplicationController
     @disposal_records = current_user.disposal_records
     @waste_items = WasteItem.order('created_at DESC')
     @locations = Location.new
-    @categories = Category.new
+    # @categories = Category.new
     @waste_items = @waste_items.where(tag: params[:query]) if params[:query].present?
   end
 
@@ -48,7 +48,7 @@ class WasteItemsController < ApplicationController
     @waste_item = WasteItem.new(waste_item_params)
     @waste_item.user = current_user
     @waste_item.bin_type = BinType.all.sample
-    @waste_item.category = Category.all.sample
+    # @waste_item.category = Category.all.sample
     if @waste_item.save!
       # find_waste_item_name(@waste_item.photo.url)
       respond_to do |format|
@@ -61,8 +61,6 @@ class WasteItemsController < ApplicationController
     end
   end
 
-  def search
-  end
 
   private
 
