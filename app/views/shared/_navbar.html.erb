@@ -1,37 +1,39 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <div class="address">
-      <%= link_to root_path, class: "navbar-brand" do %>
-        <%= image_tag "location.svg"%>
-        Rudi-Dutschke-Straße, 12345 Berlin
-      <% end %>
-    </div>
+<div data-controller="user-location" data-user-location-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+      <div class="container-fluid">
+        <div class="address">
+          <%= link_to root_path, class: "navbar-brand" do %>
+            <%= image_tag "navbars-icon/location.svg"%>
+              <span id="userAddress" style="font-size: 12px"></span>
+        <% end %>
+      </div>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto custom-menu">
-        <%# if user_signed_in? %>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto custom-menu">
+          <%# if user_signed_in? %>
 
-          <li class="nav-item active">
-            <%= link_to "About WasteWise", about_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to "Settings", about_path, class: "nav-link" %>
-          </li>
-           <li class="nav-item active">
-              <%= link_to "Log out", destroy_user_session_path, class: "nav-link", data: { turbo_method: :delete } %>
+            <li class="nav-item active">
+              <%= link_to "About WasteWise", about_path, class: "nav-link" %>
             </li>
+            <li class="nav-item active">
+              <%= link_to "About Team", team_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item active">
+                <%= link_to "Log out", destroy_user_session_path, class: "nav-link", data: { turbo_method: :delete } %>
+              </li>
 
-        <%# else %>
-          <!--li class="nav-item"-->
-            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
-          <!--/li-->
-        <%# end %>
+          <%# else %>
+            <!--li class="nav-item"-->
+              <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <!--/li-->
+          <%# end %>
 
-      </ul>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

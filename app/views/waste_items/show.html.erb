@@ -1,6 +1,6 @@
 <%#= link_to "<<", root_path, class:"link" %>
 <div class="item-container">
-<%= cl_image_tag @waste_item.photo.key, class: "card-img-top img-fluid" %>
+  <%= cl_image_tag @waste_item.photo.key, class: "card-img-top img-fluid" %>
 
   <div class="waste-container">
     <h2><%= @waste_item.name %></h2>
@@ -10,40 +10,39 @@
     </button>
   </div>
 
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Learn more</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <% if @waste_item.bin_type.name == "Organic Waste" %>
-          <%= render "waste_items/bin_type_texts/organic_bin" %>
-        <% elsif @waste_item.bin_type.name == "Recycling" %>
-          <%= render "waste_items/bin_type_texts/yellow_bin" %>
-        <% elsif @waste_item.bin_type.name == "Paper" %>
-          <%= render "waste_items/bin_type_texts/blue_bin" %>
-        <% elsif @waste_item.bin_type.name == "Glass" %>
-          <%= render "waste_items/bin_type_texts/glass_bin" %>
-        <% elsif @waste_item.bin_type.name == "Household Waste" %>
-          <%= render "waste_items/bin_type_texts/household_bin" %>
-        <% elsif @waste_item.bin_type.name == "Bulky Waste" %>
-          <%= render "waste_items/bin_type_texts/bulky_bin" %>
-          <% else %>
-          <p>Sorry, that bin does not exist 🗑️</p>
-        <% end %>
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Learn more</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <% if @waste_item.bin_type.name == "Organic Waste" %>
+            <%= render "waste_items/bin_type_texts/organic_bin" %>
+          <% elsif @waste_item.bin_type.name == "Recycling" %>
+            <%= render "waste_items/bin_type_texts/yellow_bin" %>
+          <% elsif @waste_item.bin_type.name == "Paper" %>
+            <%= render "waste_items/bin_type_texts/blue_bin" %>
+          <% elsif @waste_item.bin_type.name == "Glass" %>
+            <%= render "waste_items/bin_type_texts/glass_bin" %>
+          <% elsif @waste_item.bin_type.name == "Household Waste" %>
+            <%= render "waste_items/bin_type_texts/household_bin" %>
+          <% elsif @waste_item.bin_type.name == "Bulky Waste" %>
+            <%= render "waste_items/bin_type_texts/bulky_bin" %>
+            <% else %>
+            <p>Sorry, that bin does not exist 🗑️</p>
+          <% end %>
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn-info button" data-bs-dismiss="modal">okay</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-info button" data-bs-dismiss="modal">Okay</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<p style="padding: 5px;">Find <%= @waste_item.bin_type.name %> bins on the map below</p>
+  <p style="padding: 5px;">Find <%= @waste_item.bin_type.name %> bins on the map below</p>
 </div>
 
 <div class="map-container">
@@ -52,4 +51,25 @@
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   <p style="padding: 5px;">Navigate to the nearest <%= @waste_item.bin_type.name %> with Google Maps by clicking on the address!</p>
+</div>
+
+
+<div class="modal fade" id="staticBackdrop" data-controller="dispoal-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <button type="button" class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal" data-dispoal-modal-target="button">
+    Launch demo modal
+  </button>
+
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content" data-dispoal-modal-target="modal">
+      <div class="modal-header">Did you give the trash its grand farewell?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" data-action="click->dispoal-modal#close" data-dispoal-modal-target="form"></button>
+      </div>
+      <div class="modal-footer">
+      <%= simple_form_for @disposal_record do |f| %>
+        <%= f.input :waste_item_id, as: :hidden, input_html: {value: @waste_item.id} %>
+        <%= f.submit "🗑️ Disposed!", class:"button link"%>
+      <% end %>
+      </div>
+    </div>
+  </div>
 </div>
