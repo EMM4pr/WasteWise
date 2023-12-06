@@ -41,11 +41,6 @@ location5 = Location.new(name: "Rossman", address: 'Rudi-Dutschke-Straße 29. 10
 location5.save!
 
 
-
-
-
-
-
 # same as above
 location_bin_type = LocationBinType.new(location: location1, bin_type: bin_type )
 location_bin_type.save!
