@@ -15,11 +15,30 @@ tony = User.create(username: 'tony', email: 'tony@test.com', password: '123456')
 olli = User.create(username: 'olli', email: 'olli@test.com', password: '123456')
 adam = User.create(username: 'adam', email: 'adam@test.com', password: '123456')
 
+
 # Create bin types
-yellow_bin = BinType.create(
+yellow_bin = BinType.new(
   name: 'Recycling',
   description: 'Container for recyclable items, such as plastic, pots, tools, cutlery, foam materials, and metal containers, promoting environmentally friendly waste disposal.'
 )
+
+#file_1 = URI.open("app/assets/images/tree1.png")
+#yellow_bin.photo.attach(io: file_1, filename: "#{yellow_bin.name}.png", content_type: "image/png")
+#yellow_bin.save
+
+# create your bin
+bin_type = BinType.new(name: "Brown bin", description: "For biodegradable goods. It is used to make biogas and compost.2 Do not use plastic or biodegradable bags, only paper bags.")
+file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Trashed_vegetables_in_Luxembourg.jpeg/440px-Trashed_vegetables_in_Luxembourg.jpeg")
+bin_type.photo.attach(bio: file, filename: "nes.jpeg", content_type: "image/jpeg")
+bin_type.save!
+
+
+bin_type = BinType.new(name: "Haushold bin", description: "For biodegradable goods. It is used to make biogas and compost.2 Do not use plastic or biodegradable bags, only paper bags.")
+file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Trashed_vegetables_in_Luxembourg.jpeg/440px-Trashed_vegetables_in_Luxembourg.jpeg")
+bin_type.photo.attach(bio: file, filename: "nes.jpeg", content_type: "image/jpeg")
+bin_type.save!
+
+# create locations for that bin
 
 organic_bin = BinType.create(
   name: 'Organic Waste',
