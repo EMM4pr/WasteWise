@@ -1,11 +1,11 @@
 
 <%= simple_form_for :search, url: search_path, method: :get do |f| %>
-  <% <div class="search-form-control form-group">
-    <input class="form-control string required" type="text" style="border-radius: 50px" name="search[query]" id="search_query" placeholder="Search for waste item" />
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" style="border-radius: 50px" name="query" id="search_query" placeholder="Search for waste item" />
     <button name="button" type="submit" class="btn btn-info">
       <i class="fas fa-search"></i> Search
     </button>
-  </div> %>
+  </div>
 <% end %>
 
 <% @bin_types.each do |bin_type|%>
