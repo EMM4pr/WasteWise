@@ -16,6 +16,26 @@ olli = User.create(username: 'olli', email: 'olli@test.com', password: '123456')
 adam = User.create(username: 'adam', email: 'adam@test.com', password: '123456')
 
 # Create bin types
+bin_type = BinType.new(name: "Brown bin", description: "For biodegradable goods. It is used to make biogas and compost.2 Do not use plastic or biodegradable bags, only paper bags..")
+file = URI.open("https://media.istockphoto.com/id/1514440907/de/foto/kompost.jpg?s=612x612&w=0&k=20&c=pf_JS9N3CQGas7SrOU5vddul61hVacO-PPP97WHwTVY=")
+bin_type.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+bin_type.save!
+
+
+bin_type = BinType.new(name: "Glass recycling bins", description: "For glass containers that do not have a deposit (Pfand). In Berlin, you do not need to clean glass containers. If your building does not have glass recycling bins")
+file = URI.open("https://images.unsplash.com/photo-1620676524838-7017c424120e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2xhc3MlMjByZWN5Y2xpbmclMjBiaW5zfGVufDB8fDB8fHww")
+bin_type.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+bin_type.save!
+
+
+# Locations
+location1 = Location.new(name: "DM", address: 'Brain Algee, Friedrichstraße, 60306 Berlin')
+location1.save!
+
+location2 = Location.new(name: "Berlin recycling", address: 'Charlottenstraße 2.  10969 Berlin')
+location1.save!
+
+
 yellow_bin = BinType.create(
   name: 'Recycling',
   description: 'Container for recyclable items, such as plastic, pots, tools, cutlery, foam materials, and metal containers, promoting environmentally friendly waste disposal.'
