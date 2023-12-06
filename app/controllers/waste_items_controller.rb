@@ -16,6 +16,8 @@ class WasteItemsController < ApplicationController
   end
 
   def search
+
+    @bin_type = BinType.first
     # if params[:query]
     #   @wasteitems = WasteItem.where("title ILIKE ")
     # end

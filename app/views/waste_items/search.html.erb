@@ -7,16 +7,16 @@
   </div>
 <% end %>
 
-<div class="card-product">
+<div class=>
 
-   <img src="https://media.istockphoto.com/id/1438630211/de/foto/unordentliche-m%C3%BCllcontainer.jpg?s=612x612&w=0&k=20&c=LpOEuh6uWfgCiff0fDOm5GB6QXp0Xr6dsfcV_TFpUoE=" />
+   <%= cl_image_tag @bin_type.photo.key, class: "card-product" %>
   <div class="card-product-infos">
-    <h2>Black household Waste bin</h2>
+    <%= @bin_type.description %>
     <p>Bin for residual waste that cannot be recycled, encompassing items like hygiene products and tissues, providing a disposal solution for non-recyclable household waste</p>
   </div>
 </div>
 
-<div class="card-product">
+<%# <div class="card-product">
   <img src="https://images.unsplash.com/photo-1621496654772-c66c48290259?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
   <div class="card-product-infos">
     <h2>Organic waste bin</h2>
@@ -54,7 +54,7 @@
     <h2>Bulky waste</h2>
     <p>Bin designed for bulky residual waste that cannot be recycled, such as carpets, timber, and electrical devices, ensuring proper disposal of larger non-recyclable items</p>
   </div>
-</div>
+</div> %>
 
 
 <div class="map-container">
