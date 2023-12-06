@@ -47,6 +47,7 @@ export default class extends Controller {
       .then((data) => {
         const addressArray = data.features[0].place_name.split(",")
         addressArray.shift()
+        addressArray.pop()
         document.getElementById("userAddress").innerText = addressArray.join();
         const currentAddress = document.getElementById("userAddress").innerText
         // document.cookie = `${currentAddress}`
