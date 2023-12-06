@@ -65,20 +65,28 @@ export default class extends Controller {
         });
       }
       if (this.levelValue === "10.1") {
-        this.playAudio()
-        this.fakeEnterKey()
         Swal.fire({
           title: "Hooray!",
           text: "You've just leveled up in eco-heroism and unlocked the Trash Titan Certificate! 🌍🏆",
           imageUrl: "../../assets/rewards-img/certificate.png",
           imageWidth: 120,
           imageHeight: 120,
-          imageAlt: "Custom image"
-        });
+          imageAlt: "Custom image",
+          confirmButtonText: "Ok"
+
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log("Is confirmed");
+            this.playAudio()
+          } else if (result.isDismissed) {
+            console.log("Is not confirmed");
+            this.playAudio()
+          }
+        })
       }
+
       if (this.levelValue === "5.1") {
-        this.playAudio()
-        this.fakeEnterKey()
+
         Swal.fire({
           title: "High-five!",
           text: "You've just upgraded your eco-game and scored the Green Thumb Trophy! 🌿💚",
@@ -89,8 +97,7 @@ export default class extends Controller {
         });
       }
       if (this.levelValue === "1.1") {
-        this.playAudio()
-        this.fakeEnterKey()
+
         Swal.fire({
           title: "Hooray! ",
           text: "You've just unlocked the prestigious Eco Hero Badge! 🌟",
@@ -118,9 +125,10 @@ export default class extends Controller {
   }
 
   playAudio() {
+    const button = document.querySelector("swal2-confirm")
     const audio = document.querySelector("audio")
-
-    const audioListener = (event) => {
+    audio.play()
+    /*const audioListener = (event) => {
       console.log(event)
       if (event.key === "Enter") {
         audio.play()
@@ -128,7 +136,7 @@ export default class extends Controller {
       }
     }
 
-    document.addEventListener("keydown", audioListener);
+    document.addEventListener("keydown", audioListener); */
   }
 
 }
