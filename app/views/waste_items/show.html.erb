@@ -1,4 +1,3 @@
-<%#= link_to "<<", root_path, class:"link" %>
 <div data-controller="dispoal-modal">
   <div data-dispoal-modal-target="modal" class="hidden-modal hidden" tabindex="-1">
     <p>Hang tight!</p>
@@ -43,7 +42,6 @@
     <button type="button" class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal" data-dispoal-modal-target="button">
       Launch demo modal
     </button>
-
     <div class="modal-dialog modal-dialog-scrollable">
       <div class="modal-content" data-dispoal-modal-target="modal">
         <div class="modal-header">Did you give the trash its grand farewell?</h5>
@@ -52,7 +50,7 @@
         <div class="modal-footer">
         <%= simple_form_for @disposal_record do |f| %>
           <%= f.input :waste_item_id, as: :hidden, input_html: {value: @waste_item.id} %>
-          <%= f.submit "🗑️ Disposed!", class:"button link"%>
+          <%= f.submit "Trash It!", class:"button link"%>
         <% end %>
         </div>
       </div>
