@@ -10,10 +10,6 @@
   <div class="item-container">
 
     <%= cl_image_tag @waste_item.photo.key, class: "card-img-top img-fluid" %>
-<<<<<<< HEAD
-
-=======
->>>>>>> master
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
@@ -22,14 +18,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-<<<<<<< HEAD
-
-          </div>
-          <div class="modal-body">
-            <%# Only rendering remote for DEMO %>
-=======
               <%# Only rendering remote for DEMO %>
->>>>>>> master
             <%= render "waste_items/bin_type_texts/remote_bin" %>
           </div>
           <div class="modal-footer">
@@ -37,15 +26,9 @@
           </div>
         </div>
       </div>
-<<<<<<< HEAD
-
-      <p style="padding: 5px;">Find <%= @waste_item.bin_type.name %> bins on the map below</p>
-    </div>
-=======
     </div>
     <p style="padding: 5px;"><%= @waste_item.name %></p>
     <p style="padding: 5px;">Find <%= @waste_item.bin_type.name %> bins on the map below</p>
->>>>>>> master
   </div>
 
   <div class="map-container">
