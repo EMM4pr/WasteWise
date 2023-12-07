@@ -16,33 +16,21 @@ user.save!
 #ELectronics
 
 # only our bins types
-bin_type_electronics = BinType.new(name: "Electronics", description: "For used electronics and objects with the WEEE logo. These bins are in electronics stores, hardware stores, and some supermarkets.")
-file_electronics = URI.open("https://allaboutberlin.com/images/content1x/lidl-battery-recycling-akku-entsorgung.jpg")
+bin_type_electronics = BinType.new(name: "Electronics Bin", description: "For used electronics and objects with the WEEE logo. These bins are in electronics stores, hardware stores, and some supermarkets.")
+file_electronics = URI.open("https://onecms-res.cloudinary.com/image/upload/s--ntm1IwI3--/c_fill,g_auto,h_468,w_830/f_auto,q_auto/e-waste-recycling-bin-a-harvey-norman-outlet-jun-30---2021.jpg?itok=EkvcIQfe")
 bin_type_electronics.photo.attach(io: file_electronics, filename: "nes.png", content_type: "image/png")
 bin_type_electronics.save!
 
 # either enough to show all on map, or enough for one example during presentation
-location1_remote = Location.new(name: "DM", address: 'Friedrichstraße 191. 10117 Berlin')
-location1_remote.save!
-location2_remote = Location.new(name: "Lidl", address: 'Charlottenstraße 2.  10969 Berlin')
-location2_remote.save!
-location3_remote = Location.new(name: "Rewe", address: 'Friedrichstraße 60. 10117 Berlin')
+location3_remote = Location.new(name: "Saturn", address: 'Voßstraße 24, 10117 Berlin')
 location3_remote.save!
 location4_remote = Location.new(name: "Cyberport", address: 'Friedrichstraße 50-55. 10117 Berlin')
 location4_remote.save!
-location5_remote = Location.new(name: "Rossman", address: 'Rudi-Dutschke-Straße 29. 10969 Berlin')
-location5_remote.save!
 
 # same as above
-location_bin_type_remote = LocationBinType.new(location: location1_remote, bin_type: bin_type_electronics )
-location_bin_type_remote.save!
-location_bin_type_remote = LocationBinType.new(location: location2_remote, bin_type: bin_type_electronics )
-location_bin_type_remote.save!
 location_bin_type_remote = LocationBinType.new(location: location3_remote, bin_type: bin_type_electronics )
 location_bin_type_remote.save!
 location_bin_type_remote = LocationBinType.new(location: location4_remote, bin_type: bin_type_electronics )
-location_bin_type_remote.save!
-location_bin_type_remote = LocationBinType.new(location: location5_remote, bin_type: bin_type_electronics )
 location_bin_type_remote.save!
 
 # enough to fill index page / Dashboard.
@@ -52,13 +40,13 @@ waste_item_remote.photo.attach(io: file_remote, filename: "nes.png", content_typ
 waste_item_remote.save!
 
 # disposal_record enough to show the badge logic and trees on Dashboard
-disposal_record = DisposalRecord.new(user: user, location: location1_remote, waste_item: waste_item_remote, disposal_date: "date")
-disposal_record.save!
+disposal_record_remote = DisposalRecord.new(user: user, location: location3_remote, waste_item: waste_item_remote, disposal_date: "date")
+disposal_record_remote.save!
 
 
 # #BULKY WASTE
 
-bin_type_bulky = BinType.new(name: "Bulky Waste", description: "Bin designed for bulky residual waste that cannot be recycled, such as carpets, timber, and electrical devices, ensuring proper disposal of larger non-recyclable items.")
+bin_type_bulky = BinType.new(name: "Bulky Waste Bin", description: "Bin designed for bulky residual waste that cannot be recycled, such as carpets, timber, and electrical devices, ensuring proper disposal of larger non-recyclable items.")
 file_bulky = URI.open("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.rbb24.de%2Fcontent%2Fdam%2Frbb%2Frbb%2Frbb24%2F2020%2F2020_06%2Fdpa-account%2Fbsr.jpg.jpg%2Fsize%3D708x398.jpg&f=1&nofb=1&ipt=c376365f2e93893d0144a31ee61b43a76e3e07aa7e63982a4a61565e9281af9b&ipo=images")
 bin_type_bulky.photo.attach(io: file_bulky, filename: "nes.png", content_type: "image/png")
 bin_type_bulky.save!
@@ -91,6 +79,9 @@ waste_item_Wardrobe = WasteItem.new(user: user, bin_type: bin_type_bulky, name: 
 file_Wardrobe = URI.open("https://freepngimg.com/thumb/aquarium/44704-6-cupboard-hd-free-transparent-image-hq.png")
 waste_item_Wardrobe.photo.attach(io: file_Wardrobe, filename: "nes.png", content_type: "image/png")
 waste_item_Wardrobe.save!
+
+disposal_record_Wardrobe = DisposalRecord.new(user: user, location: location1_Wardrobe, waste_item: waste_item_Wardrobe, disposal_date: "date")
+disposal_record_Wardrobe.save!
 
 #blue bin
 
@@ -171,3 +162,67 @@ waste_item_Wardrobe.save!
 # file = URI.open("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fde.academic.ru%2Fpictures%2Fdewiki%2F70%2FFull_Ashtray.jpg&f=1&nofb=1&ipt=bb26fa305a08249aace738cf86be95d0ff204b30406ab1945cfa5c37edc3c154&ipo=images")
 # waste_item.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 # waste_item.save!
+
+
+
+#CLOTH
+
+bin_type_cloth = BinType.new(name: "Cloth Donation Bins", description: "There are over 6000 donation bins for clothes in Berlin.1 They are often close to supermarkets.")
+file_cloth = URI.open("https://allaboutberlin.com/images/content1x/red-cross-donation-bin-berlin.jpg")
+bin_type_cloth.photo.attach(io: file_cloth, filename: "nes.png", content_type: "image/png")
+bin_type_cloth.save!
+
+# either enough to show all on map, or enough for one example during presentation
+location1_Shirt = Location.new(name: "motz-the-shop", address: 'Friedrichstrasse 226, 10963 Berlin')
+location1_Shirt.save!
+location2_Shirt = Location.new(name: "tHERAPY Recycle and Exorcise", address: 'Mariángeles Aguirre, Hallesches Ufer, 10963')
+location2_Shirt.save!
+location3_Shirt = Location.new(name: "Fair divider and exchange corner", address: 'Friedrichstraße 1, 10969 Berlin')
+location3_Shirt.save!
+
+location_bin_type_Shirt = LocationBinType.new(location: location1_Shirt, bin_type: bin_type_cloth )
+location_bin_type_Shirt.save!
+location_bin_type_Shirt = LocationBinType.new(location: location2_Shirt, bin_type: bin_type_cloth )
+location_bin_type_Shirt.save!
+location_bin_type_Shirt = LocationBinType.new(location: location3_Shirt, bin_type: bin_type_cloth )
+location_bin_type_Shirt.save!
+
+# enough to fill index page / Dashboard.
+waste_item_Shirt = WasteItem.new(user: user, bin_type: bin_type_cloth, name: "Shirt")
+file_Shirt = URI.open("https://www.bodenimages.com/productimages/r1aproductlarge/22wspr_t0896_blu_d06.jpg")
+waste_item_Shirt.photo.attach(io: file_Shirt, filename: "nes.png", content_type: "image/png")
+waste_item_Shirt.save!
+
+disposal_record_Shirt = DisposalRecord.new(user: user, location: location1_Shirt, waste_item: waste_item_Shirt, disposal_date: "date")
+disposal_record_Shirt.save!
+
+#BATTERY
+
+bin_type_Battery = BinType.new(name: "Battery Donation Bins", description: "Supermarkets, electronics stores and hardware stores have battery recycling bins, usually near the door. Rossmann and dm also recycle batteries.")
+file_Battery = URI.open("https://allaboutberlin.com/images/content1x/lidl-battery-recycling-akku-entsorgung.jpg")
+bin_type_Battery.photo.attach(io: file_Battery, filename: "nes.png", content_type: "image/png")
+bin_type_Battery.save!
+
+# either enough to show all on map, or enough for one example during presentation
+location1_Battery = Location.new(name: "DM", address: 'Friedrichstraße 191. 10117 Berlin')
+location1_Battery.save!
+location2_Battery = Location.new(name: "Lidl", address: 'Charlottenstraße 2.  10969 Berlin')
+location2_Battery.save!
+location3_Battery = Location.new(name: "Rewe", address: 'Friedrichstraße 60. 10117 Berlin')
+location3_Battery.save!
+
+location_bin_type_Battery = LocationBinType.new(location: location1_Battery, bin_type: bin_type_Battery )
+location_bin_type_Battery.save!
+location_bin_type_Battery = LocationBinType.new(location: location2_Battery, bin_type: bin_type_Battery )
+location_bin_type_Battery.save!
+location_bin_type_Battery = LocationBinType.new(location: location3_Battery, bin_type: bin_type_Battery )
+location_bin_type_Battery.save!
+
+# enough to fill index page / Dashboard.
+waste_item_Battery = WasteItem.new(user: user, bin_type: bin_type_Battery, name: "Battery")
+file_Battery = URI.open("https://img.huffingtonpost.com/asset/5d27b8bf2600004f00044323.jpeg?ops=scalefit_720_noupscale")
+waste_item_Battery.photo.attach(io: file_Battery, filename: "nes.png", content_type: "image/png")
+waste_item_Battery.save!
+
+disposal_record_Battery = DisposalRecord.new(user: user, location: location1_Battery, waste_item: waste_item_Battery, disposal_date: "date")
+disposal_record_Battery.save!
