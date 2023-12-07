@@ -13,8 +13,12 @@
 <div class="card-product">
    <%= cl_image_tag bin_type.photo.key %>
   <div class="card-product-infos">
-    <%= bin_type.name %>
-
+    <div>
+    <h4><%= bin_type.name %></h4>
+    </div>
+    <div>
+    <p><%= bin_type.description %> </p>
+    </div>
   </div>
   </div>
  <%end%>
