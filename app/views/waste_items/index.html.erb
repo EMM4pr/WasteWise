@@ -1,37 +1,13 @@
-<div data-controller="hello">
+<div data-controller="hello"<%#  style="height: 100vh;" %>>
   <div class="card-white">
-    <% @waste_items[0..10].each do |waste_item|%>
-      <div id="item-cards" class="inner-card-white d-flex">
-      <%# Elements 1 %>
-        <div class="photo">
-          <% if waste_item.photo.attached? %>
-            <%= cl_image_tag waste_item.photo.key, class: "photo-card-img-top img-fluid", crop: :fill %>
-          <% else %>
-            <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmlufGVufDB8fDB8fHwy" class="photo-card-img-top img-fluid" alt="Bin Image">
-          <% end %>
-        </div>
 
-        <div class="item-info">
-          <div>
-          <%= waste_item.name %>
-          </div>
-          <div>
-          <%= waste_item.bin_type.name %>
-          </div>
-        </div>
-        <div id="learn-more">
-        </div>
-      </div>
-    <%end%>
-
-    <div data-hello-target="togglableElement" class="d-none", id="lol">
-      <%# Elements 2 %>
-      <% @waste_items[11..].each do |waste_item|%>
+    <div class="box">
+      <% @disposal_records[0..10].each do |disposal_record|%>
         <div id="item-cards" class="inner-card-white d-flex">
-
+        <%# Elements 1 %>
           <div class="photo">
-            <% if waste_item.photo.attached? %>
-              <%= cl_image_tag waste_item.photo.key, class: "photo-card-img-top img-fluid", crop: :fill %>
+            <% if disposal_record.waste_item.photo.attached? %>
+              <%= cl_image_tag disposal_record.waste_item.photo.key, class: "photo-card-img-top img-fluid", crop: :fill %>
             <% else %>
               <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmlufGVufDB8fDB8fHwy" class="photo-card-img-top img-fluid" alt="Bin Image">
             <% end %>
@@ -39,18 +15,43 @@
 
           <div class="item-info">
             <div>
-            <%= waste_item.name %>
+            <%= disposal_record.waste_item.name %>
             </div>
             <div>
-            <%= waste_item.bin_type.name %>
+            <%= disposal_record.waste_item.bin_type.name %>
             </div>
           </div>
-          <div id="learn-more">
-          </div>
         </div>
-      <% end %>
-    </div>
-    <%= link_to "Show All My Items", "#", data: { action: "click->hello#toggleElement", hello_target: "lol" }, class: "btn btn-info"  %>
+      <%end%>
 
+      <div data-hello-target="togglableElement" class="d-none", id="lol">
+        <%# Elements 2 %>
+        <% @disposal_records.each do |disposal_record|%>
+          <div id="item-cards" class="inner-card-white d-flex">
+            <div class="photo">
+              <% if disposal_record.waste_item.photo.attached? %>
+                <%= cl_image_tag disposal_record.waste_item.photo.key, class: "photo-card-img-top img-fluid", crop: :fill %>
+              <% else %>
+                <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmlufGVufDB8fDB8fHwy" class="photo-card-img-top img-fluid" alt="Bin Image">
+              <% end %>
+            </div>
+
+            <div class="item-info">
+              <div>
+              <%= disposal_record.waste_item.name %>
+              </div>
+              <div>
+              <%= disposal_record.waste_item.bin_type.name %>
+              </div>
+            </div>
+            <div id="learn-more">
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <%= link_to "More Trash", "#", data: { action: "click->hello#toggleElement", hello_target: "lol" }, class: "show"  %>
+
+    </div>
   </div>
 </div>

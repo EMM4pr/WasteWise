@@ -1,5 +1,6 @@
 #item-cards {
   padding: 10px;
+  margin: 10px 0px 25px 0px;
 
   .item-info{
     margin-left: 10px;
@@ -15,8 +16,12 @@
 }
 
 .photo-card-img-top {
-  border: 1px solid lightgray;
   height: 50px;
   width: 50px;
   object-fit: cover;
+}
+
+.show {
+  color: $secondary_green;
+  text-decoration: none;
 }

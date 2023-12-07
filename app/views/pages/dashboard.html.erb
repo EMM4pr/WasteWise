@@ -1,13 +1,6 @@
 <div class="card-white" <%# style="height: 100vh;" %> data-controller="popup" data-popup-level-value="<%= @disposal_record.user_level(current_user) %>">
   <%= audio_tag('sound.mp3', controls: true, style: 'display: none;', id: 'audio') %>
 
-  <div id="welcome-header">
-    <div class="profile-img">
-      <%= image_tag "trash-bin.svg", class: "card-img-top img-fluid object-fit: cover;", crop: :fill %>
-    </div>
-    <%= current_user.first_name.capitalize if user_signed_in?%>'s Dashboard
-  </div>
-
   <% level1 = (1...5) %>
   <% level2 = (5...10) %>
   <% level3 = (10...15) %>
@@ -16,174 +9,177 @@
   <% level6 = (25...30) %>
   <% level7 = (30...35) %>
 
-  <h1>Your progress</h1>
-  <div class="progress-box">
-    <div class="text-box">
-      You've disposed <%= current_user.disposal_records.count %> items.
-      <% if level1.include?(current_user.disposal_records.count) %>
-        <%= level2.first - current_user.disposal_records.count %> items left to your next reward.
+  <div class="box">
+    <h2>Your Eco-Journey</h2>
+    <div class="progress-box">
+      <div class="text-box">
+        You've disposed <%= current_user.disposal_records.count %> items.
+        <% if level1.include?(current_user.disposal_records.count) %>
+          <strong><%= level2.first - current_user.disposal_records.count %></strong> items left to your next reward.
 
-      <% elsif level2.include?(current_user.disposal_records.count) %>
-        <strong> <%= level3.first - current_user.disposal_records.count %> </strong> items left to your next reward.
+        <% elsif level2.include?(current_user.disposal_records.count) %>
+          <strong> <%= level3.first - current_user.disposal_records.count %> </strong> items left to your next reward.
 
-      <% elsif level3.include?(current_user.disposal_records.count) %>
-        <strong> <%= level4.first - current_user.disposal_records.count %> </strong> items left to your next reward.
+        <% elsif level3.include?(current_user.disposal_records.count) %>
+          <strong> <%= level4.first - current_user.disposal_records.count %> </strong> items left to your next reward.
 
-      <% elsif level4.include?(current_user.disposal_records.count) %>
-        <strong> <%= level5.first - current_user.disposal_records.count %> </strong> items left to your next reward.
+        <% elsif level4.include?(current_user.disposal_records.count) %>
+          <strong> <%= level5.first - current_user.disposal_records.count %> </strong> items left to your next reward.
 
-      <% elsif level5.include?(current_user.disposal_records.count) %>
-        <strong> <%= level6.first - current_user.disposal_records.count %> </strong> items left to your next reward.
+        <% elsif level5.include?(current_user.disposal_records.count) %>
+          <strong> <%= level6.first - current_user.disposal_records.count %> </strong> items left to your next reward.
 
-      <% elsif level6.include?(current_user.disposal_records.count) %>
-        <%= 65 - current_user.disposal_records.count %> items left to your next reward.
+        <% elsif level6.include?(current_user.disposal_records.count) %>
+          <%= 65 - current_user.disposal_records.count %> items left to your next reward.
+        <% end %>
+      <%# That is <%= ((current_user.disposal_records.count / 30.0) * 100).to_i %><%# % left to your next. %>
+      </div>
+      <div class="progress-goal">
+        <div class="progress-line" style="width: <%= ((@disposal_record.level_calc(current_user)  % 5 / 5.to_f) * 100 ).to_i %>%;"></div>
+      </div>
+    </div>
+
+    <div class="rewards">
+      <% if level1.first <= @disposal_record.level_calc(current_user) %>
+        <div class="reward">
+          <div>
+            <%=image_tag "rewards-img/eco-badge.png"%>
+          </div>
+          Eco Hero Badge
+        </div>
+      <%else%>
+        <div class="empty-reward">
+          <div>
+            <%=image_tag "rewards-img/eco-badge.png"%>
+          </div>
+          Eco Hero Badge
+        </div>
       <% end %>
-    <%# That is <%= ((current_user.disposal_records.count / 30.0) * 100).to_i %><%# % left to your next. %>
-    </div>
-    <div class="progress-goal">
-      <div class="progress-line" style="width: <%= ((@disposal_record.level_calc(current_user)  % 5 / 5.to_f) * 100 ).to_i %>%;"></div>
-    </div>
-  </div>
 
-  <%#<div class="divider"></div> %>
+      <% if  level2.first <= @disposal_record.level_calc(current_user) %>
+        <div class="reward">
+          <div>
+            <%=image_tag "rewards-img/trophy.png"%>
+          </div>
+          Green Thumb Trophy
+        </div>
+      <%else%>
+        <div class="empty-reward">
+          <div>
+            <%=image_tag "rewards-img/trophy.png"%>
+          </div>
+          Green Thumb Trophy
+        </div>
+      <% end %>
 
-  <div class="rewards">
-    <% if level1.first <= @disposal_record.level_calc(current_user) %>
-      <div class="reward">
-        <div>
-          <%=image_tag "rewards-img/eco-badge.png"%>
+      <% if level3.first <= @disposal_record.level_calc(current_user) %>
+        <div class="reward">
+          <div>
+            <%=image_tag "rewards-img/certificate.png"%>
+          </div>
+          Trash Titan Certificate
         </div>
-        Eco Hero Badge
-      </div>
-    <%else%>
-      <div class="empty-reward">
-        <div>
-          <%=image_tag "rewards-img/eco-badge.png"%>
+      <%else%>
+        <div class="empty-reward">
+          <div>
+            <%=image_tag "rewards-img/certificate.png"%>
+          </div>
+          Trash Titan Certificate
         </div>
-        Eco Hero Badge
-      </div>
-    <% end %>
+      <% end %>
 
-    <% if  level2.first <= @disposal_record.level_calc(current_user) %>
-      <div class="reward">
-        <div>
-          <%=image_tag "rewards-img/trophy.png"%>
+      <% if level4.first <= @disposal_record.level_calc(current_user) %>
+        <div class="reward">
+          <div>
+            <%=image_tag "rewards-img/medal.png"%>
+          </div>
+          Eco Warrior Medal
         </div>
-        Green Thumb Trophy
-      </div>
-    <%else%>
-      <div class="empty-reward">
-        <div>
-          <%=image_tag "rewards-img/trophy.png"%>
+      <%else%>
+        <div class="empty-reward">
+          <div>
+            <%=image_tag "rewards-img/medal.png"%>
+          </div>
+          Eco Warrior Medal
         </div>
-        Green Thumb Trophy
-      </div>
-    <% end %>
+      <% end %>
 
-    <% if level3.first <= @disposal_record.level_calc(current_user) %>
-      <div class="reward">
-        <div>
-          <%=image_tag "rewards-img/certificate.png"%>
+      <% if level5.first <= @disposal_record.level_calc(current_user) %>
+        <div class="reward">
+          <div>
+            <%=image_tag "rewards-img/wizard-diploma.png"%>
+          </div>
+          Waste Wizard Diploma
         </div>
-        Trash Titan Certificate
-      </div>
-    <%else%>
-      <div class="empty-reward">
-        <div>
-          <%=image_tag "rewards-img/certificate.png"%>
+      <%else%>
+        <div class="empty-reward">
+          <div>
+            <%=image_tag "rewards-img/wizard-diploma.png"%>
+          </div>
+          Waste Wizard Diploma
         </div>
-        Trash Titan Certificate
-      </div>
-    <% end %>
+      <% end %>
 
-    <% if level4.first <= @disposal_record.level_calc(current_user) %>
-      <div class="reward">
-        <div>
-          <%=image_tag "rewards-img/medal.png"%>
+      <% if level6.first <= @disposal_record.level_calc(current_user) %>
+        <div class="reward">
+          <div>
+            <%=image_tag "rewards-img/frame.png"%>
+          </div>
+          Planet Protector Plaque
         </div>
-        Eco Warrior Medal
-      </div>
-    <%else%>
-      <div class="empty-reward">
-        <div>
-          <%=image_tag "rewards-img/medal.png"%>
+      <%else%>
+        <div class="empty-reward">
+          <div>
+            <%=image_tag "rewards-img/frame.png"%>
+          </div>
+          Planet Protector Plaqu
         </div>
-        Eco Warrior Medal
-      </div>
-    <% end %>
+      <% end %>
 
-    <% if level5.first <= @disposal_record.level_calc(current_user) %>
-      <div class="reward">
-        <div>
-          <%=image_tag "rewards-img/wizard-diploma.png"%>
+      <% if level7.first <= @disposal_record.level_calc(current_user) %>
+        <div class="reward">
+          <div>
+            <%=image_tag "rewards-img/stars.png"%>
+          </div>
+          Sustainability Star Trophy
         </div>
-        Waste Wizard Diploma
-      </div>
-    <%else%>
-      <div class="empty-reward">
-        <div>
-          <%=image_tag "rewards-img/wizard-diploma.png"%>
+      <%else%>
+        <div class="empty-reward">
+          <div>
+            <%=image_tag "rewards-img/stars.png"%>
+          </div>
+          Sustainability Star Trophy
         </div>
-        Waste Wizard Diploma
-      </div>
-    <% end %>
-
-    <% if level6.first <= @disposal_record.level_calc(current_user) %>
-      <div class="reward">
-        <div>
-          <%=image_tag "rewards-img/frame.png"%>
-        </div>
-        Planet Protector Plaque
-      </div>
-    <%else%>
-      <div class="empty-reward">
-        <div>
-          <%=image_tag "rewards-img/frame.png"%>
-        </div>
-        Planet Protector Plaqu
-      </div>
-    <% end %>
-
-    <% if level7.first <= @disposal_record.level_calc(current_user) %>
-      <div class="reward">
-        <div>
-          <%=image_tag "rewards-img/stars.png"%>
-        </div>
-        Sustainability Star Trophy
-      </div>
-    <%else%>
-      <div class="empty-reward">
-        <div>
-          <%=image_tag "rewards-img/stars.png"%>
-        </div>
-        Sustainability Star Trophy
-      </div>
-    <% end %>
-  </div>
-
-
-  <h1>You disposed</h1>
-  <div class="inner-card-white">
-    <div class="dash-card">
-      <a href="#" class="link chart-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        <%= pie_chart(@bin_types_count, colors: ["#8A584C", "#4A702F", "#FFD50B"], donut: true, class:"chart")%>
-      </a>
+      <% end %>
     </div>
   </div>
 
-  <h1>Grow Your Forest </h1>
-  <div class="inner-card-white" data-controller="shuffle">
-    <div class="grid-card" data-shuffle-target="grid">
-      <% @disposal_records.count.times do%>
-        <div class="card" data-shuffle-target="card">
-          <%= image_tag "tree-icons/tree#{rand(1..3)}.png", class: "baum", alt: "tree" %>
-        </div>
-      <%end%>
-      <% (50-@disposal_records.count).times do%>
-        <div class="card" data-shuffle-target="card">
-          <p></p>
-        </div>
-      <%end%>
+  <div class="box">
+    <h2>Waste Wonder Wheel</h2>
+    <div class="inner-card-white">
+      <div class="dash-card">
+        <a href="#" class="link chart-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <%= pie_chart(@bin_types_count, colors: ["#8A584C", "#4A702F", "#FFD50B"], donut: true, class:"chart")%>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>Grow Your Forest </h2>
+    <div class="inner-card-white" data-controller="shuffle">
+      <div class="grid-card" data-shuffle-target="grid">
+        <% @disposal_records.count.times do%>
+          <div class="card" data-shuffle-target="card">
+            <%= image_tag "tree-icons/tree#{rand(1..3)}.png", class: "baum", alt: "tree" %>
+          </div>
+        <%end%>
+        <% (50-@disposal_records.count).times do%>
+          <div class="card" data-shuffle-target="card">
+            <p><%= image_tag "tree-icons/grass.png", class: "grass", alt: "tree" %></p>
+          </div>
+        <%end%>
+      </div>
     </div>
   </div>
 
@@ -191,12 +187,12 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Your recently disposed items </h1>
+          <h2 class="modal-title fs-5" id="exampleModalLabel">Your recently disposed items </h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
 
         <div class="modal-body">
-          <% @disposal_records[0..3].each do |disposal_record|%>
+          <% @disposal_records[3..].each do |disposal_record|%>
             <% if @bin_type_id.include?(disposal_record.waste_item.bin_type_id) %>
               <p>
                 <div>
@@ -214,7 +210,7 @@
 
         <div class="modal-footer">
           <%# <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> %>
-          <%= link_to "See all", waste_items_path, class:"link button" %>
+          <%= link_to "See All", waste_items_path, class:"link button" %>
         </div>
       </div>
     </div>

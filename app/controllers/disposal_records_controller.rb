@@ -10,7 +10,7 @@ class DisposalRecordsController < ApplicationController
     @disposal_record.location = @waste_item.bin_type.location_bin_types.first.location
 
     if @disposal_record.save
-      redirect_to root_path(origin: "create"), notice: 'Disposal record was successfully created.'
+      redirect_to root_path(origin: "create"), notice: 'Traaashed'
     end
   end
 
