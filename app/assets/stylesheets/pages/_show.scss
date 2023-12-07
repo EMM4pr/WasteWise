@@ -1,5 +1,5 @@
 .item-container{
-  border: 1px solid lightgray;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
   border-radius: 10px;
   background-color: white;
   max-width: 500px;
@@ -10,7 +10,7 @@
 }
 
 .map-container{
-  border: 1px solid lightgray;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
   border-radius: 10px;
   background-color: white;
   max-width: 500px;
@@ -19,6 +19,10 @@
   padding: 10px;
   font-family: 'DM Sans', sans-serif;
   color: $secondary_green
+}
+
+.card-white p{
+  margin-bottom: 0;
 }
 
 .card-img, .card-img-top {
