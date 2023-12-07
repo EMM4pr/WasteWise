@@ -6,6 +6,7 @@
     </div>
     <p>Our virtual acrobats are doing somersaults to bring in the content.</p>
   </div>
+
   <div class="item-container">
     <%= cl_image_tag @waste_item.photo.key, class: "card-img-top img-fluid" %>
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -27,7 +28,7 @@
     </div>
     <div class="d-flex justify-content-between align-items-center">
       <h3 style="padding: 5px; font-weight: bold;"><%= @waste_item.name %></h3>
-      <h5 class="modal-title button" id="staticBackdropLabel">Learn more</h5>
+      <h5 class="modal-title button text-white p-1" style="width: 110px; height: 30px; font-size: 14px;" id="staticBackdropLabel">Learn more</h5>
     </div>
 
     <p style="padding: 5px;">Find <%= @waste_item.bin_type.name %> bins on the map below</p>
