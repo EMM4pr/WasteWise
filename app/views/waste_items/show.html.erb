@@ -51,7 +51,7 @@
         <div class="modal-footer">
         <%= simple_form_for @disposal_record do |f| %>
           <%= f.input :waste_item_id, as: :hidden, input_html: {value: @waste_item.id} %>
-          <%= f.submit "Trash It!", class:"button link"%>
+          <%= f.submit "Trash It!", style:"width: 110px; height: 30px; font-size: 14px", class:"button link"%>
         <% end %>
         </div>
       </div>
