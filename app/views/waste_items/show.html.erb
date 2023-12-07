@@ -39,23 +39,21 @@
       <p style="padding: 5px;">Navigate to the nearest <%= @waste_item.bin_type.name %> with Google Maps by clicking on the address!</p>
     </div>
 
+  <div class="modal fade" id="staticBackdrop" data-dispoal-modal-target="disposal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <button type="button" class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal" data-dispoal-modal-target="button">
+      Launch demo modal
+    </button>
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content" data-dispoal-modal-target="modal">
+        <div class="modal-header">Did you give the trash its grand farewell?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" data-action="click->dispoal-modal#close" data-dispoal-modal-target="form"></button>
+        </div>
+        <div class="modal-footer">
+        <%= simple_form_for @disposal_record do |f| %>
+          <%= f.input :waste_item_id, as: :hidden, input_html: {value: @waste_item.id} %>
+          <%= f.submit "Trash It!", class:"button link"%>
+        <% end %>
 
-    <div class="modal fade" id="staticBackdrop" data-dispoal-modal-target="disposal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <button type="button" class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal" data-dispoal-modal-target="button">
-        Launch demo modal
-      </button>
-
-      <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content" data-dispoal-modal-target="modal">
-          <div class="modal-header">Did you give the trash its grand farewell?</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" data-action="click->dispoal-modal#close" data-dispoal-modal-target="form"></button>
-          </div>
-          <div class="modal-footer">
-          <%= simple_form_for @disposal_record do |f| %>
-            <%= f.input :waste_item_id, as: :hidden, input_html: {value: @waste_item.id} %>
-            <%= f.submit "🗑️ Disposed!", class:"button link"%>
-          <% end %>
-          </div>
         </div>
       </div>
     </div>

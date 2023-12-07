@@ -9,7 +9,7 @@ export default class extends Controller {
   toggleElement() {
     event.preventDefault()
     this.togglableElementTarget.classList.toggle("d-none");
-    const buttonText = this.lolTarget.innerText === "Show All My Items" ? "Hide The Whole List" : "Show All My Items";
+    const buttonText = this.lolTarget.innerText === "More Trash" ? "Hide Trash" : "More Trash";
     this.lolTarget.innerText = buttonText;
   }
 }

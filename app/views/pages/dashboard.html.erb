@@ -10,7 +10,7 @@
   <% level7 = (30...35) %>
 
   <div class="box">
-    <h1>Your Eco-Journey</h1>
+    <h2>Your Eco-Journey</h2>
     <div class="progress-box">
       <div class="text-box">
         You've disposed <%= current_user.disposal_records.count %> items.
@@ -155,7 +155,7 @@
   </div>
 
   <div class="box">
-    <h1>Waste Wonder Wheel</h1>
+    <h2>Waste Wonder Wheel</h2>
     <div class="inner-card-white">
       <div class="dash-card">
         <a href="#" class="link chart-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -166,7 +166,7 @@
   </div>
 
   <div class="box">
-    <h1>Grow Your Forest </h1>
+    <h2>Grow Your Forest </h2>
     <div class="inner-card-white" data-controller="shuffle">
       <div class="grid-card" data-shuffle-target="grid">
         <% @disposal_records.count.times do%>
@@ -187,12 +187,12 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Your recently disposed items </h1>
+          <h2 class="modal-title fs-5" id="exampleModalLabel">Your recently disposed items </h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
 
         <div class="modal-body">
-          <% @disposal_records[0..3].each do |disposal_record|%>
+          <% @disposal_records[3..].each do |disposal_record|%>
             <% if @bin_type_id.include?(disposal_record.waste_item.bin_type_id) %>
               <p>
                 <div>
@@ -210,7 +210,7 @@
 
         <div class="modal-footer">
           <%# <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> %>
-          <%= link_to "See all", waste_items_path, class:"link button" %>
+          <%= link_to "See All", waste_items_path, class:"link button" %>
         </div>
       </div>
     </div>
