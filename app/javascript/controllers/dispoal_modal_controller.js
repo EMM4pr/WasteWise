@@ -8,7 +8,7 @@ export default class extends Controller {
     this.showLoading()
     setTimeout(() => {
       this.show();
-    }, 10000);
+    }, 15000);
   }
 
   show() {
@@ -20,7 +20,7 @@ export default class extends Controller {
     this.modalTarget.classList.remove("hidden")
     setTimeout(() => {
       this.modalTarget.classList.add("d-none")
-    }, 6000)
+    }, 3000)
   }
 
   close() {
