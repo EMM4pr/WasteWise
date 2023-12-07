@@ -1,69 +1,73 @@
-.item-container{
-  border: 1px solid lightgray;
+.item-container {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
   border-radius: 10px;
   background-color: white;
   max-width: 500px;
   margin-top: 10px;
-/*   padding: 7px;
- */  font-family: 'DM Sans', sans-serif;
+  padding: 10px;
+  font-family: 'DM Sans', sans-serif;
   color: $secondary_green
 }
 
-.map-container{
+.map-container {
   border: 1px solid lightgray;
   border-radius: 10px;
   background-color: white;
   max-width: 500px;
   margin-top: 10px;
   margin-bottom: 10px;
-/*   padding: 7px;*/
+  padding: 10px;
   font-family: 'DM Sans', sans-serif;
   color: $secondary_green
 }
 
+.card-white p {
+  margin-bottom: 0;
+}
+
 .card-img, .card-img-top {
-  border-radius: 10px;
   border-radius: 10px;
   max-width: 100%;
   object-fit: cover;
   height: 450px;
+  width: 50%;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-.mapboxgl-canvas{
+.mapboxgl-canvas {
   border-radius: 10px;
 }
 
-.btn-info{
+.btn-info {
   background-color: #FA7070 !important;
   color: white;
   border: 1px solid lightgray;
   border-radius: 50px !important;
 }
 
-.waste-container{
+.waste-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 5px;
 }
 
-.modal-content{
+.modal-content {
   border-radius: 10px;
 }
 
-.modal-body{
+.modal-body {
   text-align: justify;
 }
 
-.modal-body p{
+.modal-body p {
   padding-inline: 3px;
   margin-bottom: 0rem;
 }
 
-.hidden-modal{
+.hidden-modal {
   position: absolute;
   background: white;
   z-index: 999;
@@ -71,16 +75,18 @@
   text-align: center;
   text-align: justify;
   padding: 20%;
-  p{
+
+  p {
     margin-top: 30px;
     font-size: 20px;
   }
 }
 
-.gif{
+.gif {
   text-align: center;
-  img{
-  width: 100px;
-  height: auto;
+
+  img {
+    width: 100px;
+    height: auto;
   }
 }
