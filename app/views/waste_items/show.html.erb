@@ -7,29 +7,32 @@
     <p>Our virtual acrobats are doing somersaults to bring in the content.</p>
   </div>
 
-  <div class="card-white">
-    <div class="item-container">
-      <%= cl_image_tag @waste_item.photo.key, class: "card-img-top img-fluid" %>
-      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel">Learn more</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <%# Only rendering remote for DEMO %>
-              <%= render "waste_items/bin_type_texts/remote_bin" %>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn-info button" data-bs-dismiss="modal">Okay</button>
-            </div>
+  <div class="item-container">
+    <%= cl_image_tag @waste_item.photo.key, class: "card-img-top img-fluid" %>
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Learn more</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <%# Only rendering remote for DEMO %>
+            <%= render "waste_items/bin_type_texts/remote_bin" %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn-info button" data-bs-dismiss="modal">Okay</button>
           </div>
         </div>
       </div>
-      <h3 style="padding: 5px; font-weight: bold;"><%= @waste_item.name %></h3>
-      <p style="padding: 5px;">Find <%= @waste_item.bin_type.name %> bins on the map below</p>
     </div>
+    <div class="d-flex justify-content-between align-items-center">
+      <h3 style="padding: 5px; font-weight: bold;"><%= @waste_item.name %></h3>
+      <h5 class="modal-title button text-white p-1" style="width: 110px; height: 30px; font-size: 14px;" id="staticBackdropLabel">Learn more</h5>
+    </div>
+
+    <p style="padding: 5px;">Find <%= @waste_item.bin_type.name %> bins on the map below</p>
+  </div>
 
     <div class="map-container">
       <div style="width: 100%; height: 400px;"
@@ -41,7 +44,7 @@
 
   <div class="modal fade" id="staticBackdrop" data-dispoal-modal-target="disposal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <button type="button" class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal" data-dispoal-modal-target="button">
-      Launch demo modal
+      Launch Trash Modal
     </button>
     <div class="modal-dialog modal-dialog-scrollable">
       <div class="modal-content" data-dispoal-modal-target="modal">
@@ -53,9 +56,8 @@
           <%= f.input :waste_item_id, as: :hidden, input_html: {value: @waste_item.id} %>
           <%= f.submit "Trash It!", class:"button link"%>
         <% end %>
-
         </div>
       </div>
     </div>
   </div>
-  </div>
+</div>
