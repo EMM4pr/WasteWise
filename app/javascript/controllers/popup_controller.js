@@ -117,7 +117,7 @@ export default class extends Controller {
         Swal.fire({
           title: "High-five!",
           text: "You've just upgraded your eco-game and scored the Green Thumb Trophy! 🌿💚",
-          imageUrl: "../../assets/rewards-img/trophy.png",
+          imageUrl: "https://res.cloudinary.com/dj6psz9ru/image/upload/v1701952014/trophy_qpaara.png",
           imageWidth: 120,
           imageHeight: 120,
           imageAlt: "Custom image"
