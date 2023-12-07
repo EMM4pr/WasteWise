@@ -198,7 +198,7 @@ disposal_record_Shirt.save!
 
 #BATTERY
 
-bin_type_Battery = BinType.new(name: "Battery Donation", description: "Supermarkets, electronics stores and hardware stores have battery recycling bins, usually near the door. Rossmann and dm also recycle batteries.")
+bin_type_Battery = BinType.new(name: "Battery Recycling", description: "Supermarkets, electronics stores and hardware stores have battery recycling bins, usually near the door. Rossmann and dm also recycle batteries.")
 file_Battery = URI.open("https://allaboutberlin.com/images/content1x/lidl-battery-recycling-akku-entsorgung.jpg")
 bin_type_Battery.photo.attach(io: file_Battery, filename: "nes.png", content_type: "image/png")
 bin_type_Battery.save!
