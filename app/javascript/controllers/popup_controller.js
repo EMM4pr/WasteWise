@@ -17,58 +17,86 @@ export default class extends Controller {
 
     if (queryString === "?origin=create") {
       if (this.levelValue === "30.1") {
-        this.playAudio()
-        this.fakeEnterKey()
         Swal.fire({
           title: "Hooray! You just leveled up your eco-game!",
           text: "Behold the mighty Sustainability Star Trophy – your ultimate reward for tossing that waste like an eco-champion! 🌿✨",
-          imageUrl: "../../assets/rewards-img/frame.png",
+          imageUrl: "https://res.cloudinary.com/dj6psz9ru/image/upload/v1701952013/stars_d5shtx.png",
           imageWidth: 120,
           imageHeight: 120,
           imageAlt: "Custom image"
-        });
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log("Is confirmed");
+            this.playAudio()
+          } else if (result.isDismissed) {
+            console.log("Is not confirmed");
+            this.playAudio()
+          }
+        })
       }
+
       if (this.levelValue === "25.1") {
-        this.playAudio()
-        this.fakeEnterKey()
         Swal.fire({
           title: "Hooray!",
           text: "You've just leveled up as a Waste Warrior and unlocked the prestigious Planet Protector Plaque! 🌍✨",
-          imageUrl: "../../assets/rewards-img/frame.png",
+          imageUrl: "https://res.cloudinary.com/dj6psz9ru/image/upload/v1701952013/frame_mrquul.png",
           imageWidth: 120,
           imageHeight: 120,
           imageAlt: "Custom image"
-        });
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log("Is confirmed");
+            this.playAudio()
+          } else if (result.isDismissed) {
+            console.log("Is not confirmed");
+            this.playAudio()
+          }
+        })
       }
+
       if (this.levelValue === "20.1") {
-        this.playAudio()
-        this.fakeEnterKey()
         Swal.fire({
           title: "Hooray!",
           text: "You've just leveled up on the Eco Hero leaderboard—your Waste Wizard Diploma is now officially unlocked! 🌍♻️",
-          imageUrl: "../../assets/rewards-img/frame.png",
+          imageUrl: "https://res.cloudinary.com/dj6psz9ru/image/upload/v1701952013/wizard-diploma_eezcfv.png",
           imageWidth: 120,
           imageHeight: 120,
           imageAlt: "Custom image"
-        });
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log("Is confirmed");
+            this.playAudio()
+          } else if (result.isDismissed) {
+            console.log("Is not confirmed");
+            this.playAudio()
+          }
+        })
       }
+
       if (this.levelValue === "15.1") {
-        this.playAudio()
-        this.fakeEnterKey()
         Swal.fire({
           title: "Boom! ",
           text: "You just leveled up your eco game and scored the legendary Eco Warrior Medal. Nice job on tossing that waste! 🌿🏆",
-          imageUrl: "../../assets/rewards-img/medal.png",
+          imageUrl: "https://res.cloudinary.com/dj6psz9ru/image/upload/v1701952013/medal_gfw0qo.png",
           imageWidth: 120,
           imageHeight: 120,
           imageAlt: "Custom image"
-        });
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log("Is confirmed");
+            this.playAudio()
+          } else if (result.isDismissed) {
+            console.log("Is not confirmed");
+            this.playAudio()
+          }
+        })
       }
+
       if (this.levelValue === "10.1") {
         Swal.fire({
           title: "Hooray!",
           text: "You've just leveled up in eco-heroism and unlocked the Trash Titan Certificate! 🌍🏆",
-          imageUrl: "../../assets/rewards-img/certificate.png",
+          imageUrl: "https://res.cloudinary.com/dj6psz9ru/image/upload/v1701952013/certificate_c5borr.png",
           imageWidth: 120,
           imageHeight: 120,
           imageAlt: "Custom image",
@@ -86,26 +114,41 @@ export default class extends Controller {
       }
 
       if (this.levelValue === "5.1") {
-
         Swal.fire({
           title: "High-five!",
           text: "You've just upgraded your eco-game and scored the Green Thumb Trophy! 🌿💚",
-          imageUrl: "../../assets/rewards-img/trophy.png",
+          imageUrl: "https://res.cloudinary.com/dj6psz9ru/image/upload/v1701952014/trophy_qpaara.png",
           imageWidth: 120,
           imageHeight: 120,
           imageAlt: "Custom image"
-        });
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log("Is confirmed");
+            this.playAudio()
+          } else if (result.isDismissed) {
+            console.log("Is not confirmed");
+            this.playAudio()
+          }
+        })
       }
-      if (this.levelValue === "1.1") {
 
+      if (this.levelValue === "1.1") {
         Swal.fire({
           title: "Hooray! ",
           text: "You've just unlocked the prestigious Eco Hero Badge! 🌟",
-          imageUrl: "../../assets/rewards-img/eco-badge.png",
+          imageUrl: "https://res.cloudinary.com/dj6psz9ru/image/upload/v1701952013/eco-badge_dxvws8.png",
           imageWidth: 120,
           imageHeight: 120,
           imageAlt: "Custom image"
-        });
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log("Is confirmed");
+            this.playAudio()
+          } else if (result.isDismissed) {
+            console.log("Is not confirmed");
+            this.playAudio()
+          }
+        })
       }
     }
   }

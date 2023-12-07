@@ -14,9 +14,9 @@ class GoogleApiService
                             headers: {'Content-Type' => 'application/json'})
 
     parsed_response = response.parsed_response
-    p "👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻"
-    p parsed_response.to_json
-    p "👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻"
+    # p "👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻"
+    # p parsed_response.to_json
+    # p "👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻"
 
     first_object_found = find_info(parsed_response)
     first_object_found["name"] # This line will break if trash_json is { error: "No response data" }

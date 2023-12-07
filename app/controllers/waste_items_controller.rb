@@ -86,7 +86,11 @@ class WasteItemsController < ApplicationController
   def create
     @waste_item = WasteItem.new(waste_item_params)
     @waste_item.user = current_user
-    @waste_item.bin_type = BinType.all.sample
+    # p "HAHAHA"
+    # p waste_item_params
+    @waste_item.bin_type = BinType.all.first
+    # p WasteItem.find_by(name: waste_item_params[:name])
+    # @waste_item.bin_type = WasteItem.find_by(name: waste_item_params[:name]).bin_type
     # @waste_item.category = Category.all.sample
     if @waste_item.save!
       # find_waste_item_name(@waste_item.photo.url)

@@ -8,13 +8,17 @@
   </div>
 <% end %>
 
-<% @bin_types.each do |bin_type|%>
-   <%= cl_image_tag bin_type.photo.key, class: "card-product" %>
+
+<% @bin_types.each do |bin_type| %>
+<div class="card-product">
+   <%= cl_image_tag bin_type.photo.key %>
   <div class="card-product-infos">
     <%= bin_type.name %>
-    <%= bin_type.description %>
+
+  </div>
   </div>
  <%end%>
+
 
 <%# <div class="card-product">
   <img src="https://images.unsplash.com/photo-1621496654772-c66c48290259?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
