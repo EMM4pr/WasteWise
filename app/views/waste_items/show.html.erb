@@ -8,33 +8,35 @@
     <p>Our virtual acrobats are doing somersaults to bring in the content.</p>
   </div>
   <div class="item-container">
+
     <%= cl_image_tag @waste_item.photo.key, class: "card-img-top img-fluid" %>
 
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Learn more</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Learn more</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
 
-        </div>
-        <div class="modal-body">
-          <%# Only rendering remote for DEMO %>
-          <%= render "waste_items/bin_type_texts/remote_bin" %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn-info button" data-bs-dismiss="modal">Okay</button>
+          </div>
+          <div class="modal-body">
+            <%# Only rendering remote for DEMO %>
+            <%= render "waste_items/bin_type_texts/remote_bin" %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn-info button" data-bs-dismiss="modal">Okay</button>
+          </div>
         </div>
       </div>
-    </div>
 
-    <p style="padding: 5px;">Find <%= @waste_item.bin_type.name %> bins on the map below</p>
+      <p style="padding: 5px;">Find <%= @waste_item.bin_type.name %> bins on the map below</p>
+    </div>
   </div>
 
   <div class="map-container">
-    <div style="width: 100%; height: 600px;"
+    <div style="width: 100%; height: 400px;"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
