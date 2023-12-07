@@ -22,20 +22,12 @@ bin_type_electronics.photo.attach(io: file_electronics, filename: "nes.png", con
 bin_type_electronics.save!
 
 # either enough to show all on map, or enough for one example during presentation
-location1_remote = Location.new(name: "DM", address: 'Friedrichstraße 191. 10117 Berlin')
-location1_remote.save!
-location2_remote = Location.new(name: "Lidl", address: 'Charlottenstraße 2.  10969 Berlin')
-location2_remote.save!
-location3_remote = Location.new(name: "Rewe", address: 'Friedrichstraße 60. 10117 Berlin')
+location3_remote = Location.new(name: "Saturn", address: 'Voßstraße 24, 10117 Berlin')
 location3_remote.save!
 location4_remote = Location.new(name: "Cyberport", address: 'Friedrichstraße 50-55. 10117 Berlin')
 location4_remote.save!
 
 # same as above
-location_bin_type_remote = LocationBinType.new(location: location1_remote, bin_type: bin_type_electronics )
-location_bin_type_remote.save!
-location_bin_type_remote = LocationBinType.new(location: location2_remote, bin_type: bin_type_electronics )
-location_bin_type_remote.save!
 location_bin_type_remote = LocationBinType.new(location: location3_remote, bin_type: bin_type_electronics )
 location_bin_type_remote.save!
 location_bin_type_remote = LocationBinType.new(location: location4_remote, bin_type: bin_type_electronics )
@@ -48,7 +40,7 @@ waste_item_remote.photo.attach(io: file_remote, filename: "nes.png", content_typ
 waste_item_remote.save!
 
 # disposal_record enough to show the badge logic and trees on Dashboard
-disposal_record_remote = DisposalRecord.new(user: user, location: location1_remote, waste_item: waste_item_remote, disposal_date: "date")
+disposal_record_remote = DisposalRecord.new(user: user, location: location3_remote, waste_item: waste_item_remote, disposal_date: "date")
 disposal_record_remote.save!
 
 
@@ -212,11 +204,11 @@ bin_type_Battery.photo.attach(io: file_Battery, filename: "nes.png", content_typ
 bin_type_Battery.save!
 
 # either enough to show all on map, or enough for one example during presentation
-location1_Battery = Location.new(name: "motz-the-shop", address: 'Friedrichstrasse 226, 10963 Berlin')
+location1_Battery = Location.new(name: "DM", address: 'Friedrichstraße 191. 10117 Berlin')
 location1_Battery.save!
-location2_Battery = Location.new(name: "tHERAPY Recycle and Exorcise", address: 'Mariángeles Aguirre, Hallesches Ufer, 10963')
+location2_Battery = Location.new(name: "Lidl", address: 'Charlottenstraße 2.  10969 Berlin')
 location2_Battery.save!
-location3_Battery = Location.new(name: "Fair divider and exchange corner", address: 'Friedrichstraße 1, 10969 Berlin')
+location3_Battery = Location.new(name: "Rewe", address: 'Friedrichstraße 60. 10117 Berlin')
 location3_Battery.save!
 
 location_bin_type_Battery = LocationBinType.new(location: location1_Battery, bin_type: bin_type_Battery )
