@@ -1,0 +1,6 @@
+<div id="welcome-header">
+    <div class="profile-img">
+      <%= cl_image_tag(current_user.photo.key, class: "card-img-top img-fluid object-fit: cover;", crop: :fill) if current_user.photo.attached? %>
+    </div>
+    Welcome, <%= current_user.first_name.capitalize if user_signed_in?%>
+  </div>
