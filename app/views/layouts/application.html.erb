@@ -15,6 +15,10 @@
 
     <%= render 'shared/ios_pwa_links' %>
 
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
+      <%= render 'shared/ios_pwa_links' %>
   </head>
 
   <body style="font-family: 'DM Sans', sans-serif; background-color: #eaf1ea">
