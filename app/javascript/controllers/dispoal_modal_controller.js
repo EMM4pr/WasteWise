@@ -8,7 +8,7 @@ export default class extends Controller {
     this.showLoading()
     setTimeout(() => {
       this.show();
-    }, 15000);
+    }, 25000);
   }
 
   show() {
