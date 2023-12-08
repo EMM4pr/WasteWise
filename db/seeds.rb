@@ -164,7 +164,7 @@ disposal_record_Wardrobe.save!
 
 #CLOTH
 
-bin_type_cloth = BinType.new(name: "Cloth Donation", description: "There are over 6000 donation bins for clothes in Berlin.1 They are often close to supermarkets.")
+bin_type_cloth = BinType.new(name: "Cloth Donation", description: "There are over 6000 donation bins for clothes in Berlin. They are often close to supermarkets.")
 file_cloth = URI.open("https://allaboutberlin.com/images/content1x/red-cross-donation-bin-berlin.jpg")
 bin_type_cloth.photo.attach(io: file_cloth, filename: "nes.png", content_type: "image/png")
 bin_type_cloth.save!
