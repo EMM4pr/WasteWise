@@ -3,6 +3,7 @@
   "description": "WasteWise is an app that helps you dispose waste and earn rewards.",
   "display": "fullscreen",
   "name": "WasteWise",
+  "scope": "/",
   "icons": [
     <% files = Dir.entries(Rails.root.join("app/assets/images/icons/")).select {|f| !File.directory? f} %>
     <% files.each_with_index do |file, index| %>
