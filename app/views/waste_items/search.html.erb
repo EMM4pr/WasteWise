@@ -1,7 +1,6 @@
-
 <%= simple_form_for :search, url: search_path, method: :get do |f| %>
   <div class="search-form-control form-group">
-    <input class="form-control string required" type="text" style="border-radius: 50px" name="query" id="search_query" placeholder="Search for waste item" />
+    <input class="form-control string required" type="text" style="background-color: white;border-radius: 50px" name="query" id="search_query" placeholder="Search for waste item" />
     <button name="button" type="submit" class="btn btn-info">
       <i class="fas fa-search"></i> Search
     </button>
@@ -11,10 +10,9 @@
 
 <% @bin_types.each do |bin_type| %>
 <div class="card-product">
-   <%= cl_image_tag bin_type.photo.key %>
   <div class="card-product-infos">
     <div>
-    <h4><%= bin_type.name %></h4>
+    <h4 style="font-weight: 700;"><%= bin_type.name %></h4>
     </div>
     <div>
     <p><%= bin_type.description %> </p>

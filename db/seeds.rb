@@ -13,7 +13,7 @@ user.save!
 #ELectronics
 
 # only our bins types
-bin_type_electronics = BinType.new(name: "Electronics", description: "For used electronics and objects with the WEEE logo. These bins are in electronics stores, hardware stores, and some supermarkets.")
+bin_type_electronics = BinType.new(name: "Electronics", description: "Mobile Phones | Laptops and Tablets | Chargers and Cables | Electronic Accessories")
 file_electronics = URI.open("https://onecms-res.cloudinary.com/image/upload/s--ntm1IwI3--/c_fill,g_auto,h_468,w_830/f_auto,q_auto/e-waste-recycling-bin-a-harvey-norman-outlet-jun-30---2021.jpg?itok=EkvcIQfe")
 bin_type_electronics.photo.attach(io: file_electronics, filename: "nes.png", content_type: "image/png")
 bin_type_electronics.save!
@@ -43,7 +43,7 @@ disposal_record_remote.save!
 
 # #BULKY WASTE
 
-bin_type_bulky = BinType.new(name: "Bulky Waste", description: "Bin designed for bulky residual waste that cannot be recycled, such as carpets, timber, and electrical devices, ensuring proper disposal of larger non-recyclable items.")
+bin_type_bulky = BinType.new(name: "Bulky Waste", description: "Bulky residual waste | Carpets, Timber | Electrical devices | Larger Non-Recyclable Items")
 file_bulky = URI.open("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.rbb24.de%2Fcontent%2Fdam%2Frbb%2Frbb%2Frbb24%2F2020%2F2020_06%2Fdpa-account%2Fbsr.jpg.jpg%2Fsize%3D708x398.jpg&f=1&nofb=1&ipt=c376365f2e93893d0144a31ee61b43a76e3e07aa7e63982a4a61565e9281af9b&ipo=images")
 bin_type_bulky.photo.attach(io: file_bulky, filename: "nes.png", content_type: "image/png")
 bin_type_bulky.save!
@@ -164,7 +164,9 @@ disposal_record_Wardrobe.save!
 
 #CLOTH
 
-bin_type_cloth = BinType.new(name: "Cloth Donation", description: "There are over 6000 donation bins for clothes in Berlin. They are often close to supermarkets.")
+
+bin_type_cloth = BinType.new(name: "Clothes Donation", description: "Gently Used Clothing | Clean and Wearable Textiles | Shoes and Accessories")
+
 file_cloth = URI.open("https://allaboutberlin.com/images/content1x/red-cross-donation-bin-berlin.jpg")
 bin_type_cloth.photo.attach(io: file_cloth, filename: "nes.png", content_type: "image/png")
 bin_type_cloth.save!
@@ -195,7 +197,7 @@ disposal_record_Shirt.save!
 
 #BATTERY
 
-bin_type_Battery = BinType.new(name: "Battery Recycling", description: "Supermarkets, electronics stores and hardware stores have battery recycling bins, usually near the door. Rossmann and dm also recycle batteries.")
+bin_type_Battery = BinType.new(name: "Battery Recycling", description: " AA Batteries | AAA Batteries | C Batteries | Laptop and Mobile Phone Batteries")
 file_Battery = URI.open("https://allaboutberlin.com/images/content1x/lidl-battery-recycling-akku-entsorgung.jpg")
 bin_type_Battery.photo.attach(io: file_Battery, filename: "nes.png", content_type: "image/png")
 bin_type_Battery.save!
