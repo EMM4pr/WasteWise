@@ -75,14 +75,14 @@
       <% if level3.first <= @disposal_record.level_calc(current_user) %>
         <div class="reward">
           <div>
-            <%=image_tag "rewards-img/certificate.png"%>
+            <img src="https://res.cloudinary.com/dj6psz9ru/image/upload/v1701952013/certificate_c5borr.png" alt="Trophy">
           </div>
           Trash Titan Certificate
         </div>
       <%else%>
         <div class="empty-reward">
           <div>
-            <%=image_tag "rewards-img/certificate.png"%>
+            <img src="https://res.cloudinary.com/dj6psz9ru/image/upload/v1701952013/certificate_c5borr.png" alt="Trophy">
           </div>
           Trash Titan Certificate
         </div>
@@ -91,14 +91,14 @@
       <% if level4.first <= @disposal_record.level_calc(current_user) %>
         <div class="reward">
           <div>
-            <%=image_tag "rewards-img/medal.png"%>
+            <img src="" alt="Trophy">
           </div>
           Eco Warrior Medal
         </div>
       <%else%>
         <div class="empty-reward">
           <div>
-            <%=image_tag "rewards-img/medal.png"%>
+            <img src="https://res.cloudinary.com/dj6psz9ru/image/upload/v1701952013/medal_gfw0qo.png" alt="Trophy">
           </div>
           Eco Warrior Medal
         </div>
@@ -107,14 +107,14 @@
       <% if level5.first <= @disposal_record.level_calc(current_user) %>
         <div class="reward">
           <div>
-            <%=image_tag "rewards-img/wizard-diploma.png"%>
+            <img src="https://res.cloudinary.com/dj6psz9ru/image/upload/v1701952013/wizard-diploma_eezcfv.png" alt="Trophy">
           </div>
           Waste Wizard Diploma
         </div>
       <%else%>
         <div class="empty-reward">
           <div>
-            <%=image_tag "rewards-img/wizard-diploma.png"%>
+            <img src="https://res.cloudinary.com/dj6psz9ru/image/upload/v1701952013/wizard-diploma_eezcfv.png" alt="Trophy">
           </div>
           Waste Wizard Diploma
         </div>
@@ -123,30 +123,30 @@
       <% if level6.first <= @disposal_record.level_calc(current_user) %>
         <div class="reward">
           <div>
-            <%=image_tag "rewards-img/frame.png"%>
+            <img src="https://res.cloudinary.com/dj6psz9ru/image/upload/v1701952013/frame_mrquul.png" alt="Trophy">
           </div>
           Planet Protector Plaque
         </div>
       <%else%>
         <div class="empty-reward">
           <div>
-            <%=image_tag "rewards-img/frame.png"%>
+            <img src="https://res.cloudinary.com/dj6psz9ru/image/upload/v1701952013/frame_mrquul.png" alt="Trophy">
           </div>
-          Planet Protector Plaqu
+          Planet Protector Plaque
         </div>
       <% end %>
 
       <% if level7.first <= @disposal_record.level_calc(current_user) %>
         <div class="reward">
           <div>
-            <%=image_tag "rewards-img/stars.png"%>
+            <img src="https://res.cloudinary.com/dj6psz9ru/image/upload/v1701952014/trophy_qpaara.png" alt="Trophy">
           </div>
           Sustainability Star Trophy
         </div>
       <%else%>
         <div class="empty-reward">
           <div>
-            <%=image_tag "rewards-img/stars.png"%>
+            <img src="https://res.cloudinary.com/dj6psz9ru/image/upload/v1701952014/trophy_qpaara.png" alt="Trophy">
           </div>
           Sustainability Star Trophy
         </div>
@@ -159,7 +159,7 @@
     <div class="inner-card-white">
       <div class="dash-card">
         <a href="#" class="link chart-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <%= pie_chart(@bin_types_count, colors: ["#8A584C", "#4A702F", "#FFD50B"], donut: true, class:"chart")%>
+          <%= pie_chart(@bin_types_count, colors: ["#8A584C", "#4A702F", "#FFD50B", "#DC3535"], donut: true, class:"chart")%>
         </a>
       </div>
     </div>
@@ -197,9 +197,6 @@
               <p>
                 <div>
                 <%= disposal_record.waste_item.name%>
-                </div>
-                <div>
-                <%= disposal_record.waste_item.bin_type.name%>
                 </div>
               </p>
             <%else%>
