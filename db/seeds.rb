@@ -164,7 +164,9 @@ disposal_record_Wardrobe.save!
 
 #CLOTH
 
+
 bin_type_cloth = BinType.new(name: "Clothes Donation", description: "Gently Used Clothing | Clean and Wearable Textiles | Shoes and Accessories")
+
 file_cloth = URI.open("https://allaboutberlin.com/images/content1x/red-cross-donation-bin-berlin.jpg")
 bin_type_cloth.photo.attach(io: file_cloth, filename: "nes.png", content_type: "image/png")
 bin_type_cloth.save!
