@@ -1,6 +1,6 @@
 # WasteWise
 
-Welcome to WasteWise - Your Innovative Waste Management Solution!
+Welcome to my project WasteWise!
 
 ## Overview
 
