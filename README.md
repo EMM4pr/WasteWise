@@ -32,5 +32,5 @@ As a key member of the development team, my role included:
 
 ## Live Demo
 
-Explore WasteWise with our live demo: [WasteWise Mobile App](https://www.wastewise.me/)
+Explore WasteWise: [WasteWise Mobile App](https://www.wastewise.me/)
 
