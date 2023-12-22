@@ -30,10 +30,7 @@ As a key member of the development team, my role included:
 
 - **User Experience Optimization:** I focused on optimizing the user experience, making sure that WasteWise is both functional and user-friendly.
 
-## Getting Started
+## Live Demo
 
-### Installation
+Explore WasteWise with our live demo: [WasteWise Mobile App](https://www.wastewise.me/)
 
-1. Clone the repository:
-   
-`https://github.com/EMM4pr/WasteWise.git´
