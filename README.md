@@ -18,21 +18,9 @@ Discover the most convenient waste disposal locations near you. WasteWise helps 
 Beyond waste management, WasteWise promotes sustainable living. Users are rewarded for their responsible actions, encouraging them to contribute to a cleaner, greener future.
 
 ## My Contribution
-
-### Team Management:
-- Led and coordinated the development team.
-- Allocated tasks based on team members' strengths.
-- Oversaw project timelines and issue resolution.
-
-### Dashboard Frontend and Backend:
-- Designed and architected dashboard components.
-- Contributed to an intuitive and visually appealing UI.
-- Implemented frontend components end-to-end.
-- Led backend development for robust data management.
-
-### App Functionality Design:
-- Contributed to the overall design of WasteWise.
-- Key role in integrating and leveraging the Google Lens API.
+- Team Management
+- Dashboard Frontend and Backend
+- App Functionality Design
 
 ## Live Demo
 Explore WasteWise: [WasteWise Mobile App](https://www.wastewise.me/)
