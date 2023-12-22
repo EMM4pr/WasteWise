@@ -36,4 +36,4 @@ As a key member of the development team, my role included:
 
 1. Clone the repository:
    
-   'git clone https://github.com/EMM4pr/WasteWise.git'
+`https://github.com/EMM4pr/WasteWise.git´
