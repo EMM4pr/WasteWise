@@ -17,11 +17,11 @@ Discover the most convenient waste disposal locations near you. WasteWise helps 
 ### 3. Rewards for Sustainability
 Beyond waste management, WasteWise promotes sustainable living. Users are rewarded for their responsible actions, encouraging them to contribute to a cleaner, greener future.
 
+## Live Demo
+Explore WasteWise: [WasteWise Mobile App](https://www.wastewise.me/)
+
 ## My Contribution
 - Team Management
 - Dashboard Frontend and Backend
 - App Functionality Design
-
-## Live Demo
-Explore WasteWise: [WasteWise Mobile App](https://www.wastewise.me/)
 
