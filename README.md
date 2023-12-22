@@ -9,18 +9,13 @@ WasteWise is a cutting-edge mobile application developed by a collaborative team
 ## Features
 
 ### 1. Effortless Categorization
-
 WasteWise streamlines the waste categorization process with a simple click or image search. The app uses the Google Lens API to swiftly identify and categorize various waste items.
 
 ### 2. Location-based Disposal
-
 Discover the most convenient waste disposal locations near you. WasteWise helps users make environmentally conscious choices by providing information on the nearest disposal options.
 
 ### 3. Rewards for Sustainability
-
 Beyond waste management, WasteWise promotes sustainable living. Users are rewarded for their responsible actions, encouraging them to contribute to a cleaner, greener future.
-
-# WasteWise
 
 ## My Contribution
 
@@ -40,6 +35,5 @@ Beyond waste management, WasteWise promotes sustainable living. Users are reward
 - Key role in integrating and leveraging the Google Lens API.
 
 ## Live Demo
-
 Explore WasteWise: [WasteWise Mobile App](https://www.wastewise.me/)
 
